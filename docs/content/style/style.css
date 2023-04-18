@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+    background-color: #E6E2D8;
+    color: #fff;
+    font-family: 'space mono', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+img {
+    height: 50%;
+    max-width: 50%;
+  }
+h1 {
+    color: #D387F4;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    color: #19241F;
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+p {
+    color: #EE8A6F;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
