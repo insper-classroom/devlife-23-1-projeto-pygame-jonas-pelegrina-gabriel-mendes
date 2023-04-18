@@ -1,13 +1,36 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/F62_0SL3)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10907792&assignment_repo_type=AssignmentRepo)
-# [COLOQUE O TÍTULO DO SEU JOGO AQUI]
+# Jogo do Jonas
 
-Vocês já tiveram 2 exemplos de arquivo README nos projetos anteriores (projeto individual e checks pygame). Desta vez não forneceremos um template, mas você pode usar os projetos anteriores como base.
+O Pygame foi um projeto proposto pelos professores e coordenadores da disciplina "Developer Life" do curso de Ciência da Computação do Instituto de Ensino e Pesquisa (Insper). O projeto consiste na criação e desenvolvimento de um site e de um jogo escolhido pelos desenvolvedores escrito totalmente na linguagem Python, o projeto teve um desenvolvimento que durou aproximadamente 2 semanas e o jogo conta com aspectos comumente encontrados nos jogos atualmente, como: efeitos sonoros, jogabilidade fluida e desafiadora.
 
-Lembre-se de colocar algumas imagens do jogo no seu README.
+Nome do Jogo: Jogo do Jonas
 
-**IMPORTANTE:** coloque o nome de todos os membros do grupo neste documento e na página do jogo.
+Desenvolvedores: Gabriel Fernando Missaka Mendes e Jonas Bonfá Pelegrina
 
-Além disso, a página do jogo deve ser feita dentro da pasta `docs`.
+## Como se joga
 
-APAGUE ESSE CONTEÚDO E SUBSTITUA PELO SEU PRÓPRIO README!
+--- 
+
+## Como Baixar o Jogo
+
+1 - Primeiramente acesse o link do jogo no GitHub: https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes.
+
+2 - Após acessar o link, clique no botão verde "Code" ou "Código" e clique em "Download ZIP" (ou se preferir, poderá abrir com o github desktop) para baixar o pasta compactada com os arquivos do jogo.
+
+3 - Após efetuar o download da pasta, abra ela no seu IDE de prefêrencia (VsCode, PyCharm, etc).
+
+4 - Assim que todos os arquivos estiverem prontos, execute o arquivo "jogo.py" ele irá executar o código raiz do jogo que fará com que o jogo seja executado. 
+
+5 - Assim que a tela do jogo abrir, tudo estará pronto para jogar.
+
+## Requisitos
+
+É necessário instalar o seguinte pacote no Python:
+* Pygame
+
+Para instalar esse pacote no Python, digite o seguinte comando no terminal do seu IDE:
+
+```bash
+pip install pygame
+```
