@@ -27,7 +27,7 @@ Desenvolvedores: Gabriel Fernando Missaka Mendes e Jonas Bonfá Pelegrina
 ## Requisitos
 
 É necessário instalar o seguinte pacote no Python:
-* PyGame
+* Pygame
 
 Para instalar esse pacote no Python, digite o seguinte comando no terminal do seu IDE:
 
