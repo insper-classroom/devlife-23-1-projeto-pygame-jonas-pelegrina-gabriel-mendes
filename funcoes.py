@@ -1,7 +1,7 @@
 from random import *
 from perguntas_e_respostas import *
 
-def classifica_nivel (perguntas):
+def sorteia_questao(perguntas,nivel):
     dicionario = {}
     for e in perguntas:
         for chaves, valores in e.items():
@@ -10,8 +10,5 @@ def classifica_nivel (perguntas):
                     dicionario[valores].append (e)
                 else:
                     dicionario[valores] = [e]
-    return dicionario
-
-def sorteia_questao(dicionario, nivel):
     questao = choice(dicionario[nivel])
-    return (questao)
+    return questao
