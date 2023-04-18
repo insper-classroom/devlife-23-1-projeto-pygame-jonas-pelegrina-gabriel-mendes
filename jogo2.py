@@ -3,6 +3,8 @@
 from pygame import *
 from config import *
 from assets import *
+from perguntas_e_respostas import *
+from funcoes import *
 
 
 # Inicia módulos do Pygame
