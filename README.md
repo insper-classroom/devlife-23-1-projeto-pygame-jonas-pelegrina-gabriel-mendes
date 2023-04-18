@@ -2,7 +2,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10907792&assignment_repo_type=AssignmentRepo)
 # Jogo do Jonas
 
-O PyGame foi um projeto proposto pelos professores e coordenadores da disciplina "Developer Life" do curso de Ciência da Computação do Instituto de Ensino e Pesquisa (Insper). O projeto consiste na criação e desenvolvimento de um site e de um jogo escolhido pelos desenvolvedores escrito totalmente na linguagem Python, o projeto teve um desenvolvimento que durou aproximadamente 2 semanas e o jogo conta com aspectos comumente encontrados nos jogos atualmente, como: efeitos sonoros, jogabilidade fluida e desafiadora.
+O Pygame foi um projeto proposto pelos professores e coordenadores da disciplina "Developer Life" do curso de Ciência da Computação do Instituto de Ensino e Pesquisa (Insper). O projeto consiste na criação e desenvolvimento de um site e de um jogo escolhido pelos desenvolvedores escrito totalmente na linguagem Python, o projeto teve um desenvolvimento que durou aproximadamente 2 semanas e o jogo conta com aspectos comumente encontrados nos jogos atualmente, como: efeitos sonoros, jogabilidade fluida e desafiadora.
 
 Nome do Jogo: Jogo do Jonas
 
