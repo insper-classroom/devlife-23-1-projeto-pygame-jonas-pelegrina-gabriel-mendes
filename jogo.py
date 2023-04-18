@@ -8,6 +8,7 @@ from config import *
 init()
 mixer.init()
 
+
 # ----- Gera tela principal
 window = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
