@@ -40,7 +40,7 @@ while rodando:
         
 
         if tela_de_instrucoes:
-            instrucoes = fonte_jogo.render('Instruções', True, (0, 0, 0))
+            instrucoes = fonte_jogo.render('Instruções', True, LARANJA)
             instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
             regras = fonte_jogo.render('Assim que o jogo for iniciado surgirá uma tela', True, (0, 0, 0))
             regras1 = fonte_jogo.render('com uma pergunta e quatro opções de resposta.', True, (0, 0, 0))
@@ -55,7 +55,7 @@ while rodando:
             regras10 = fonte_jogo.render('mais difíceis e o tempo de resposta diminua.', True, (0, 0, 0))
             regras11 = fonte_jogo.render('Para ganhar o jogo, o jogador precisa responder', True, (0, 0, 0))
             regras12 = fonte_jogo.render('todas as perguntas corretamente sem errar nenhuma.', True, (0, 0, 0))
-            inicio = fonte_jogo.render('Pressione i para voltar a tela inicial', True, (0, 0, 0))
+            inicio = fonte_jogo.render('Pressione i para voltar a tela inicial', True, LARANJA)
 
             window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 - 200))
             window.blit(instrucoes_detalhe, (WIDTH/2 - instrucoes_detalhe.get_width()/2 - 220, HEIGHT/2 - instrucoes_detalhe.get_height()/2 - 185))
@@ -77,7 +77,7 @@ while rodando:
 
         elif inicio_jogo:
             # Pergunta do jogo
-            titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, (238, 138, 111))
+            titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, LARANJA)
             opcoes = questao_sorteada_facil['opcoes']
             opcao_a = fonte_jogo.render(opcoes['A'], True, (0, 0, 0))
             opcao_b = fonte_jogo.render(opcoes['B'], True, (0, 0, 0))
