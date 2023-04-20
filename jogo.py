@@ -70,10 +70,6 @@ while rodando:
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
 
-    
-           
-
-
         elif inicio_jogo:
             #Pergunta do jogo
             fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['titulo'], True, (238, 138, 111))
@@ -84,9 +80,7 @@ while rodando:
 
             #Texto/Dificuldade
             fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['nivel'], True, (238, 138, 111))
-            window.blit (fonte, (550,10))
-
-
+            window.blit (fonte, (WIDTH/2 + 230, HEIGHT/10 - fonte.get_height()/2 - 20))
 
     # Verifica eventos e consequência
     for evento in event.get():
