@@ -15,7 +15,7 @@ mixer.init()
 # ----- Gera tela principal
 window = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
-display.set_caption('FastGame')
+display.set_caption('Fast Game')
 
 
 # Símbolo do Pygame
@@ -26,6 +26,8 @@ display.set_icon(simbolo)
 rodando = True
 while rodando:
     window.fill ((230, 226, 216))
+
+
     if tela_de_inicio:
         window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
         start = fonte_jogo.render('Pressione qualquer tecla para começar', True, (0, 0, 0))
@@ -33,8 +35,10 @@ while rodando:
         window.blit(start, (WIDTH/2 - start.get_width()/2, HEIGHT/2 - start.get_height()/2 + 80))
         window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2, HEIGHT/2 - instrucoes.get_height()/2 + 120))
 
+
     else:
         
+
         if tela_de_instrucoes:
             instrucoes = fonte_jogo.render('Instruções', True, (0, 0, 0))
             instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
@@ -70,17 +74,19 @@ while rodando:
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
 
+
         elif inicio_jogo:
             #Pergunta do jogo
             fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['titulo'], True, (238, 138, 111))
-            window.blit (fonte, (WIDTH/3 - fonte.get_width()/2, HEIGHT/10 - fonte.get_height()/2))
+            window.blit (fonte, (WIDTH/2 - fonte.get_width()/2 - 120, HEIGHT/10 - fonte.get_height()/2))
             #Criando retangulo
-            window.blit(retangulo_a,(100,100))
+            window.blit(retangulo_a,(80, 100))
 
 
             #Texto/Dificuldade
             fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['nivel'], True, (238, 138, 111))
             window.blit (fonte, (WIDTH/2 + 230, HEIGHT/10 - fonte.get_height()/2 - 20))
+
 
     # Verifica eventos e consequência
     for evento in event.get():
