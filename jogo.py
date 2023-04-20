@@ -76,16 +76,28 @@ while rodando:
 
 
         elif inicio_jogo:
-            #Pergunta do jogo
-            fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['titulo'], True, (238, 138, 111))
-            window.blit (fonte, (WIDTH/2 - fonte.get_width()/2 - 120, HEIGHT/10 - fonte.get_height()/2))
-            #Criando retangulo
+            # Pergunta do jogo
+            titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, (238, 138, 111))
+            opcoes = questao_sorteada_facil['opcoes']
+            opcao_a = fonte_jogo.render(opcoes['A'], True, (0, 0, 0))
+            opcao_b = fonte_jogo.render(opcoes['B'], True, (0, 0, 0))
+            opcao_c = fonte_jogo.render(opcoes['C'], True, (0, 0, 0))
+            opcao_d = fonte_jogo.render(opcoes['D'], True, (0, 0, 0))
+            resposta = questao_sorteada_facil['correta']
+            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2 - 120, HEIGHT/10 - titulo.get_height()/2))
+            window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 300))
+            window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
+            window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width()/2 + 300, HEIGHT/10 - opcao_c.get_height()/2 + 300))
+            window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2 + 300, HEIGHT/10 - opcao_d.get_height()/2 + 400))
+            
+            
+            # Criando retangulo
             window.blit(retangulo_a,(80, 100))
 
 
-            #Texto/Dificuldade
-            fonte = fonte_jogo.render(sorteia_questao(perguntas,'facil')['nivel'], True, (238, 138, 111))
-            window.blit (fonte, (WIDTH/2 + 230, HEIGHT/10 - fonte.get_height()/2 - 20))
+            # Texto/Dificuldade
+            nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, (238, 138, 111))
+            window.blit (nivel, (WIDTH/2 + 230, HEIGHT/10 - nivel.get_height()/2 - 20))
 
 
     # Verifica eventos e consequência
