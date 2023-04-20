@@ -15,7 +15,7 @@ mixer.init()
 # ----- Gera tela principal
 window = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
-display.set_caption('Fast Game')
+display.set_caption('Quiz Hero')
 
 
 # Símbolo do Pygame
@@ -25,20 +25,18 @@ display.set_icon(simbolo)
 # ----- Código principal
 rodando = True
 while rodando:
-    window.fill ((230, 226, 216))
+    window.fill (BEGE_FUNDO)
 
 
     if tela_de_inicio:
         window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
         start = fonte_jogo.render('Pressione qualquer tecla para começar', True, (0, 0, 0))
-        instrucoes = fonte_jogo.render('Pressione i para ler as instruções do jogo', True, (0, 0, 0))
+        instrucoes = fonte_jogo.render('Pressione [i] para ler as instruções do jogo', True, (0, 0, 0))
         window.blit(start, (WIDTH/2 - start.get_width()/2, HEIGHT/2 - start.get_height()/2 + 80))
         window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2, HEIGHT/2 - instrucoes.get_height()/2 + 120))
 
 
     else:
-        
-
         if tela_de_instrucoes:
             instrucoes = fonte_jogo.render('Instruções', True, LARANJA)
             instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
@@ -79,12 +77,12 @@ while rodando:
             # Pergunta do jogo
             titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, LARANJA)
             opcoes = questao_sorteada_facil['opcoes']
-            opcao_a = fonte_jogo.render(opcoes['A'], True, (0, 0, 0))
-            opcao_b = fonte_jogo.render(opcoes['B'], True, (0, 0, 0))
-            opcao_c = fonte_jogo.render(opcoes['C'], True, (0, 0, 0))
-            opcao_d = fonte_jogo.render(opcoes['D'], True, (0, 0, 0))
+            opcao_a = fonte_jogo.render(opcoes['A'], True, PRETO)
+            opcao_b = fonte_jogo.render(opcoes['B'], True, PRETO)
+            opcao_c = fonte_jogo.render(opcoes['C'], True, PRETO)
+            opcao_d = fonte_jogo.render(opcoes['D'], True, PRETO)
             resposta = questao_sorteada_facil['correta']
-            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2 - 120, HEIGHT/10 - titulo.get_height()/2))
+            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2, HEIGHT/10 - titulo.get_height()/2))
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 300))
             window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width()/2 + 300, HEIGHT/10 - opcao_c.get_height()/2 + 300))
@@ -92,12 +90,15 @@ while rodando:
             
             
             # Criando retangulo
-            window.blit(retangulo_a,(80, 100))
+            window.blit(retangulo_a,(200, 200))
+            window.blit(retangulo_b,(100, 100))
+            window.blit(retangulo_c,(200, 200))
+            window.blit(retangulo_d,(300, 300))
 
 
             # Texto/Dificuldade
-            nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, (238, 138, 111))
-            window.blit (nivel, (WIDTH/2 + 230, HEIGHT/10 - nivel.get_height()/2 - 20))
+            nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, LARANJA)
+            window.blit (nivel, (WIDTH/2 + 230, HEIGHT/10 - nivel.get_height()/2 - 10))
 
 
     # Verifica eventos e consequência
