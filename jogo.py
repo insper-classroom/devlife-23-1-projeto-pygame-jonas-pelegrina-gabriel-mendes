@@ -38,9 +38,7 @@ while rodando:
 
     else:
 
-
-
-
+        # Tela de instruções
         if tela_de_instrucoes:
             instrucoes = fonte_jogo.render('Instruções', True, LARANJA)
             instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
@@ -77,10 +75,7 @@ while rodando:
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
 
 
-
-
-
-
+        # Tela de jogo
         elif inicio_jogo:
             # Pergunta do jogo
             titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, LARANJA)
@@ -108,14 +103,12 @@ while rodando:
             nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, LARANJA)
             window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/10 - nivel.get_height()/2))
 
+
             # Timer do jogo
             window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
         
 
-
-
-
-
+        # Tela de fim de jogo
         elif tela_fim_de_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
             mensagem = fonte_jogo.render('Você perdeu...', True, (0, 0, 0))
@@ -127,9 +120,17 @@ while rodando:
             window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
             window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
 
-
-
-
+        # Tela de vitória
+        elif tela_venceu_jogo:
+            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
+            mensagem = fonte_jogo.render('Você venceu!', True, (0, 0, 0))
+            mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
+            mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
+            sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
+            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 + 80))
+            window.blit(mensagem2, (WIDTH/2 - mensagem2.get_width()/2, HEIGHT/2 - mensagem2.get_height()/2 + 120))
+            window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
+            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
 
 
 
@@ -170,6 +171,11 @@ while rodando:
                     inicio_jogo = False
                     tela_fim_de_jogo = True
 
+                    
+            elif evento.type == KEYDOWN and evento.key == K_a:
+                inicio_jogo = False
+                tela_venceu_jogo = True
+
 
         elif tela_fim_de_jogo:
             if evento.type == KEYDOWN and evento.key == K_r:
@@ -185,6 +191,22 @@ while rodando:
             elif evento.type == KEYDOWN and evento.key == K_m:
                 tela_fim_de_jogo = False
                 tela_de_inicio = True
+        
+        elif tela_venceu_jogo:
+            if evento.type == KEYDOWN and evento.key == K_r:
+                tela_venceu_jogo = False
+                inicio_jogo = True
+                questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                
+                # Timer do jogo
+                timer, texto = 60, '60'.rjust(3)
+                time.set_timer(USEREVENT, 1000)
+
+
+            elif evento.type == KEYDOWN and evento.key == K_m:
+                tela_venceu_jogo = False
+                tela_de_inicio = True
+
                 
             
     clock.tick(FPS)

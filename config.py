@@ -18,6 +18,7 @@ BEGE_FUNDO = (230,226,216)
 tela_de_inicio = True
 tela_de_instrucoes = False
 tela_fim_de_jogo = False
+tela_venceu_jogo = False
 inicio_jogo = False
 pontuacao = 0
 dicionario_classificado = classifica_nivel(perguntas)
