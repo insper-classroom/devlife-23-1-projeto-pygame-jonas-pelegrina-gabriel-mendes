@@ -74,9 +74,9 @@ while rodando:
         elif inicio_jogo:
             # Criando retangulo
             window.blit(retangulo_a,(350, 300))
-            window.blit(retangulo_b,(700, 300))
+            window.blit(retangulo_b,(600, 300))
             window.blit(retangulo_c,(350, 420))
-            window.blit(retangulo_d,(700, 410))
+            window.blit(retangulo_d,(600, 410))
             # Pergunta do jogo
             draw.rect(window, LARANJA, (WIDTH/2 - 500, HEIGHT/10, 1000, 100))
             titulo = fonte_jogo.render(questao_sorteada_Fácil['titulo'], True, PRETO)
@@ -91,9 +91,9 @@ while rodando:
             #DESENHA O TITULO
             window.blit (titulo, (WIDTH/2 - 450, HEIGHT/10 - titulo.get_height()/2 + 50))
             #DESENHA OS TEXTO DOS RETANGULOS
-            window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 280))
-            window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
-            window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width(), HEIGHT/10 - opcao_c.get_height()/2 + 300))
+            window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 200, HEIGHT/10 - opcao_a.get_height()/2 + 280))
+            window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 200, HEIGHT/10 - opcao_b.get_height()/2 + 400))
+            window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width()/4, HEIGHT/10 - opcao_c.get_height()/2 + 300))
             window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2, HEIGHT/10 - opcao_d.get_height()/2 + 400))
             
             
