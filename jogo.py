@@ -107,6 +107,9 @@ while rodando:
             # Texto/Dificuldade
             nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, LARANJA)
             window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/10 - nivel.get_height()/2))
+
+            # Timer do jogo
+            window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
         
 
 
@@ -115,7 +118,7 @@ while rodando:
 
         elif tela_fim_de_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
-            mensagem = fonte_jogo.render('Você errou a pergunta...', True, (0, 0, 0))
+            mensagem = fonte_jogo.render('Você perdeu...', True, (0, 0, 0))
             mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
             mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
             sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
@@ -138,11 +141,8 @@ while rodando:
         if evento.type == QUIT or evento.type == KEYDOWN and evento.key == K_ESCAPE:
             rodando = False
 
-        # Verifica se o usuário apertou alguma tecla
-        elif evento.type == KEYDOWN:
-
-
-            if tela_de_inicio:
+        if tela_de_inicio:
+            if evento.type == KEYDOWN:
                 if evento.key == K_i:
                     tela_de_inicio = False
                     tela_de_instrucoes = True
@@ -151,27 +151,40 @@ while rodando:
                     inicio_jogo = True
                     questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
 
-
-            elif tela_de_instrucoes:
-                if evento.key == K_i:
-                    tela_de_instrucoes = False
-                    tela_de_inicio = True
+                    # Timer do jogo
+                    timer, texto = 60, '60'.rjust(3)
+                    time.set_timer(USEREVENT, 1000)
 
 
-            elif inicio_jogo:
-                if evento.key == K_SPACE:
+        elif tela_de_instrucoes:
+            if evento.type == KEYDOWN and evento.key == K_i:
+                tela_de_instrucoes = False
+                tela_de_inicio = True
+
+
+        elif inicio_jogo:
+            if evento.type == USEREVENT: 
+                timer -= 1
+                texto = str(timer).rjust(3) 
+                if timer == 0:
                     inicio_jogo = False
                     tela_fim_de_jogo = True
 
 
-            elif tela_fim_de_jogo:
-                if evento.key == K_r:
-                    tela_fim_de_jogo = False
-                    inicio_jogo = True
-                    questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
-                elif evento.key == K_m:
-                    tela_fim_de_jogo = False
-                    tela_de_inicio = True
+        elif tela_fim_de_jogo:
+            if evento.type == KEYDOWN and evento.key == K_r:
+                tela_fim_de_jogo = False
+                inicio_jogo = True
+                questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                
+                # Timer do jogo
+                timer, texto = 60, '60'.rjust(3)
+                time.set_timer(USEREVENT, 1000)
+
+
+            elif evento.type == KEYDOWN and evento.key == K_m:
+                tela_fim_de_jogo = False
+                tela_de_inicio = True
                 
             
     clock.tick(FPS)

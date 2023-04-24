@@ -6,6 +6,7 @@ from funcoes import *
 WIDTH = 1280 # Largura da tela
 HEIGHT = 720 # Altura da tela
 FPS = 60 # Frames por segundo
+
 #CORES
 LARANJA = (238, 138, 111)
 ROXO = (211,135,244)
