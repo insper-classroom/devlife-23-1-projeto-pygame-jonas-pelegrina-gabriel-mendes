@@ -24,6 +24,7 @@ footer{
     padding: 2em;
 }
 h1 {
+    line-height: 1;
     color: #fff;
     font-size: 2em;
     font-weight: 700;
@@ -37,14 +38,17 @@ h2{
     margin: 0;
     padding: 0;
 }
-.perfil{
+.perfis{
     display: flex;
     text-align: center;
+    gap: 2rem;
+    margin-top: 1rem;
+
 }
 .devs{
     color: #19241F;
     height: auto;
-    width: 15%;
+    width: 10rem;
     border-radius: 50%
 }
 .botao{
@@ -71,6 +75,7 @@ h2{
     grid-gap: 10px;
     margin: 10;
     padding: 10;
+    
 }
 .organic_laranja{
     display: grid;
@@ -79,7 +84,7 @@ h2{
     font-size: 1.5em;
     font-weight: 400;
     margin: 10;
-    padding: 5em;
+    padding: 4em;
     border-radius: 10px;
     border: 2px solid #EE8A6F;
 }
@@ -92,6 +97,7 @@ h2{
     padding: 5em;
     border-radius: 10px;
     border: 2px solid #D387F4;
+    flex-grow: 1;
 }
 .titulo-logo{
     color: #fff;
