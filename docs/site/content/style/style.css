@@ -36,6 +36,10 @@ p {
     margin: 0;
     padding: 0;
 }
+.perfil{
+    display: flex;
+    text-align: center;
+}
 .devs{
     color: #19241F;
     height: auto;
@@ -43,6 +47,7 @@ p {
     border-radius: 50%
 }
 .botao{
+    font-family: 'space mono', monospace;
     background-color: #19241F;
     color: #fff;
     font-size: 1.5em;
@@ -91,7 +96,7 @@ p {
     color: #19241F;
     font-size: 4em;
     font-weight: 400;
-    margin-left: 10;
+    margin-left: 0.5em;
     padding: 0;
 }
 .subtitulo-logo{
