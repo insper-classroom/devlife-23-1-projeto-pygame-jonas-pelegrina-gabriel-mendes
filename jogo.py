@@ -90,7 +90,7 @@ while rodando:
             opcao_c = fonte_jogo.render(opcoes['C'], True, PRETO)
             opcao_d = fonte_jogo.render(opcoes['D'], True, PRETO)
             resposta = questao_sorteada_facil['correta']
-            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2 - 300, HEIGHT/10 - titulo.get_height()/2 + 50))
+            window.blit (titulo, (WIDTH/2 - 500, HEIGHT/10 - titulo.get_height()/2 + 50))
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 300))
             window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width()/2 + 300, HEIGHT/10 - opcao_c.get_height()/2 + 300))
@@ -98,10 +98,10 @@ while rodando:
             
             
             # Criando retangulo
-            window.blit(retangulo_a,(200, 200))
-            window.blit(retangulo_b,(100, 100))
-            window.blit(retangulo_c,(200, 200))
-            window.blit(retangulo_d,(300, 300))
+            window.blit(retangulo_a,(500, 300))
+            window.blit(retangulo_b,(500, 300))
+            window.blit(retangulo_c,(500, 300))
+            window.blit(retangulo_d,(500, 300))
 
 
             # Texto/Dificuldade
