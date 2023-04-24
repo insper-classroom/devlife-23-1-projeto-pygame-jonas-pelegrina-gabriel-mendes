@@ -52,10 +52,6 @@ p {
     border-radius: 10px;
     border: 2px solid #EE8A6F;
 }
-.botao:hover {
-    background-color: #D387F4;
-    border: 2px solid #D387F4;
-}
 .cards{
     display: flex;
     align-content: center;
@@ -96,5 +92,12 @@ p {
     font-size: 4em;
     font-weight: 400;
     margin-left: 10;
+    padding: 0;
+}
+.subtitulo-logo{
+    color: #19241F;
+    font-size: 2em;
+    font-weight: 400;
+    margin-left: 1em;
     padding: 0;
 }
