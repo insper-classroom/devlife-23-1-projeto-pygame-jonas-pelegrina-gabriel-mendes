@@ -71,9 +71,6 @@ while rodando:
             window.blit(regras11, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 110))
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
-
-
-        # Tela de jogo
         elif inicio_jogo:
             # Criando retangulo
             window.blit(retangulo_a,(250, 300))
@@ -81,14 +78,19 @@ while rodando:
             window.blit(retangulo_c,(250, 420))
             window.blit(retangulo_d,(500, 410))
             # Pergunta do jogo
-            titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, LARANJA)
-            opcoes = questao_sorteada_facil['opcoes']
+            draw.rect(window, LARANJA, (WIDTH/2 - 500, HEIGHT/10, 1000, 100))
+            titulo = fonte_jogo.render(questao_sorteada_Fácil['titulo'], True, PRETO)
+            #OPÇÕES PARA COLOCAR NO JOGO
+            opcoes = questao_sorteada_Fácil['opcoes']
+            #DESENHA O TEXTO DAS OPÇÕES
             opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
             opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
             opcao_c = fonte_jogo.render('C: ' + opcoes['C'], True, PRETO)
             opcao_d = fonte_jogo.render('D: ' + opcoes['D'], True, PRETO)
-            resposta = questao_sorteada_facil['correta']
-            window.blit (titulo, (WIDTH/2 - 500, HEIGHT/10 - titulo.get_height()/2 + 50))
+            resposta = questao_sorteada_Fácil['correta']
+            #DESENHA O TITULO
+            window.blit (titulo, (WIDTH/2 - 450, HEIGHT/10 - titulo.get_height()/2 + 50))
+            #DESENHA OS RETANGULOS
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 280))
             window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width(), HEIGHT/10 - opcao_c.get_height()/2 + 300))
@@ -98,10 +100,8 @@ while rodando:
 
 
             # Texto/Dificuldade
-            nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, LARANJA)
-            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/10 - nivel.get_height()/2))
-
-
+            nivel = fonte_jogo.render(questao_sorteada_Fácil['nivel'], True, BRANCO)
+            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/6 - nivel.get_height()/2))
             # Timer do jogo
             window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
         
@@ -148,7 +148,7 @@ while rodando:
                 else:
                     tela_de_inicio = False
                     inicio_jogo = True
-                    questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                    questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
 
                     # Timer do jogo
                     timer, texto = 5, '5'.rjust(3)
@@ -179,7 +179,7 @@ while rodando:
             if evento.type == KEYDOWN and evento.key == K_r:
                 tela_fim_de_jogo = False
                 inicio_jogo = True
-                questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                 # Timer do jogo
                 timer, texto = 5, '5'.rjust(3)
@@ -194,7 +194,7 @@ while rodando:
             if evento.type == KEYDOWN and evento.key == K_r:
                 tela_venceu_jogo = False
                 inicio_jogo = True
-                questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                 # Timer do jogo
                 timer, texto = 5, '5'.rjust(3)
