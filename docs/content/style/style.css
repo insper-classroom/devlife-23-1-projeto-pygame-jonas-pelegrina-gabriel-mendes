@@ -1,3 +1,11 @@
+header{
+    background-color: #19241F;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    padding: 2em;
+}
 body{
     background-color: #E6E2D8;
     color: #fff;
@@ -26,13 +34,6 @@ h2{
     color: #19241F;
     font-size: 1em;
     font-weight: 700;
-    margin: 0;
-    padding: 0;
-}
-p {
-    color: #EE8A6F;
-    font-size: 1.5em;
-    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -93,14 +94,14 @@ p {
     border: 2px solid #D387F4;
 }
 .titulo-logo{
-    color: #19241F;
+    color: #fff;
     font-size: 4em;
     font-weight: 400;
     margin-left: 0.5em;
     padding: 0;
 }
 .subtitulo-logo{
-    color: #19241F;
+    color: #fff;
     font-size: 2em;
     font-weight: 400;
     margin-left: 1em;

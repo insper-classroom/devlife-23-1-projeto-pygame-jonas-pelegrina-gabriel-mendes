@@ -16,8 +16,6 @@ mixer.init()
 window = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
 display.set_caption('Quiz Hero')
-
-
 # Símbolo do Pygame
 display.set_icon(simbolo)
 
