@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'SF-Pro-Display-Regular';
+    src: url('../fonts/SF-Pro-Display-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'SF-Pro-Display-Light';
+    src: url('../fonts/SF-Pro-Display-Light.ttf')
+}
+
+header{
+    background-color: #19241F;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+    padding: 4em;
+}
+
+body{
+    background-color: #E6E2D8;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 15em;
+    color: #fff;;
+    font-family: 'SF-Pro-Display-Regular';
+    margin: 0;
+    margin-top: -0.2em;
+}
+
+.sub-titulo{
+    text-align: center;
+    font-size: 5em;
+    color: #fff;
+    font-family: 'SF-Pro-Display-Light';
+    margin: 0;
+    margin-top: 0.3em;
+}
+
+.cards{
+    display: flex;
+    align-content: center;
+    grid-gap: 10px;
+    margin: 10;
+    padding: 10;
+}
+
+
+
+.organic_laranja{
+    width: 20%;
+    height: 20%;
+    background-color: #EE8A6F;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 10em;
+    border-radius: 100px;
+    border: 5px solid #EE8A6F;
+    margin: 5em;
+    margin-top: 2em;
+}
+
+.organic_roxo{  
+    background-color: #D387F4;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 10em;
+    border-radius: 100px;
+    border: 5px solid #D387F4;
+    margin: 5em;
+    margin-top: 2em;
+}
+
+.botao{
+    background-color: #19241F;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 400;
+    font-family: 'SF-Pro-Display-Light';
+    margin-top: 1.5em;
+    padding: 1em;
+    border-radius: 15px;
+    border: 0em solid #19241F;
+}
+
+.botao:hover{
+    background-color: #D387F4;
+    border: 0em solid #D387F4;
+}
+
+footer{
+    background-color: #19241F;
+    font-size: 2.5em;
+    color: #fff;
+    font-family: 'SF-Pro-Display-Light';
+    margin: 0;
+    padding: 2em;
+}
+
+h1{
+    color: #fff;
+    font-size: 5em;
+    font-weight: 700;
+    font-family: 'SF-Pro-Display-Light';
+    margin: 0;
+    margin-top: 0em;
+    padding: 0;
+}
+
+h2{
+    color: #19241F;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: 'SF-Pro-Display-Light';
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+}
+
+.perfil{
+    display: flex;
+    text-align: center;
+}
+
+.devs{
+    color: #19241F;
+    height: auto;
+    width: 15%;
+    border-radius: 50%
+}
+
+
+
