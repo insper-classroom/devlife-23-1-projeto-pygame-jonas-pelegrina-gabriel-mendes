@@ -94,7 +94,7 @@ while rodando:
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 280))
             window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width(), HEIGHT/10 - opcao_c.get_height()/2 + 300))
-            window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2 + 300, HEIGHT/10 - opcao_d.get_height()/2 + 400))
+            window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2, HEIGHT/10 - opcao_d.get_height()/2 + 400))
             
             
 
@@ -111,7 +111,7 @@ while rodando:
         # Tela de fim de jogo
         elif tela_fim_de_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
-            mensagem = fonte_jogo.render('Você perdeu...', True, (0, 0, 0))
+            mensagem = fonte_jogo.render('Você perdeu...', True, LARANJA)
             mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
             mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
             sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
@@ -153,7 +153,7 @@ while rodando:
                     questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
 
                     # Timer do jogo
-                    timer, texto = 60, '60'.rjust(3)
+                    timer, texto = 5, '5'.rjust(3)
                     time.set_timer(USEREVENT, 1000)
 
 
@@ -184,7 +184,7 @@ while rodando:
                 questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
                 
                 # Timer do jogo
-                timer, texto = 60, '60'.rjust(3)
+                timer, texto = 5, '5'.rjust(3)
                 time.set_timer(USEREVENT, 1000)
 
 
@@ -199,7 +199,7 @@ while rodando:
                 questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
                 
                 # Timer do jogo
-                timer, texto = 60, '60'.rjust(3)
+                timer, texto = 5, '5'.rjust(3)
                 time.set_timer(USEREVENT, 1000)
 
 
