@@ -37,6 +37,10 @@ while rodando:
 
 
     else:
+
+
+
+
         if tela_de_instrucoes:
             instrucoes = fonte_jogo.render('Instruções', True, LARANJA)
             instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
@@ -53,7 +57,7 @@ while rodando:
             regras10 = fonte_jogo.render('mais difíceis e o tempo de resposta diminua.', True, (0, 0, 0))
             regras11 = fonte_jogo.render('Para ganhar o jogo, o jogador precisa responder', True, (0, 0, 0))
             regras12 = fonte_jogo.render('todas as perguntas corretamente sem errar nenhuma.', True, (0, 0, 0))
-            inicio = fonte_jogo.render('Pressione i para voltar a tela inicial', True, LARANJA)
+            inicio = fonte_jogo.render('Pressione [i] para voltar a tela inicial', True, LARANJA)
 
             window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 - 200))
             window.blit(instrucoes_detalhe, (WIDTH/2 - instrucoes_detalhe.get_width()/2 - 220, HEIGHT/2 - instrucoes_detalhe.get_height()/2 - 185))
@@ -73,6 +77,10 @@ while rodando:
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
 
 
+
+
+
+
         elif inicio_jogo:
             # Pergunta do jogo
             titulo = fonte_jogo.render(questao_sorteada_facil['titulo'], True, LARANJA)
@@ -82,7 +90,7 @@ while rodando:
             opcao_c = fonte_jogo.render(opcoes['C'], True, PRETO)
             opcao_d = fonte_jogo.render(opcoes['D'], True, PRETO)
             resposta = questao_sorteada_facil['correta']
-            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2, HEIGHT/10 - titulo.get_height()/2))
+            window.blit (titulo, (WIDTH/2 - titulo.get_width()/2 - 300, HEIGHT/10 - titulo.get_height()/2 + 50))
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 300, HEIGHT/10 - opcao_a.get_height()/2 + 300))
             window.blit (opcao_b, (WIDTH/2 - opcao_b.get_width()/2 - 300, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_c, (WIDTH/2 - opcao_c.get_width()/2 + 300, HEIGHT/10 - opcao_c.get_height()/2 + 300))
@@ -98,15 +106,42 @@ while rodando:
 
             # Texto/Dificuldade
             nivel = fonte_jogo.render(questao_sorteada_facil['nivel'], True, LARANJA)
-            window.blit (nivel, (WIDTH/2 + 230, HEIGHT/10 - nivel.get_height()/2 - 10))
+            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/10 - nivel.get_height()/2))
+        
+
+
+
+
+
+        elif tela_fim_de_jogo:
+            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
+            mensagem = fonte_jogo.render('Você errou a pergunta...', True, (0, 0, 0))
+            mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
+            mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
+            sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
+            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 + 80))
+            window.blit(mensagem2, (WIDTH/2 - mensagem2.get_width()/2, HEIGHT/2 - mensagem2.get_height()/2 + 120))
+            window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
+            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
+
+
+
+
+
+
+
 
 
     # Verifica eventos e consequência
     for evento in event.get():
         # Verifica se o usuário quer fechar a janela
-        if evento.type == QUIT:
+        if evento.type == QUIT or evento.type == KEYDOWN and evento.key == K_ESCAPE:
             rodando = False
+
+        # Verifica se o usuário apertou alguma tecla
         elif evento.type == KEYDOWN:
+
+
             if tela_de_inicio:
                 if evento.key == K_i:
                     tela_de_inicio = False
@@ -114,10 +149,30 @@ while rodando:
                 else:
                     tela_de_inicio = False
                     inicio_jogo = True
-            else:
+                    questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+
+
+            elif tela_de_instrucoes:
                 if evento.key == K_i:
-                    tela_de_inicio = True
                     tela_de_instrucoes = False
+                    tela_de_inicio = True
+
+
+            elif inicio_jogo:
+                if evento.key == K_SPACE:
+                    inicio_jogo = False
+                    tela_fim_de_jogo = True
+
+
+            elif tela_fim_de_jogo:
+                if evento.key == K_r:
+                    tela_fim_de_jogo = False
+                    inicio_jogo = True
+                    questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
+                elif evento.key == K_m:
+                    tela_fim_de_jogo = False
+                    tela_de_inicio = True
+                
             
     clock.tick(FPS)
     display.update()

@@ -4,7 +4,7 @@ perguntas = [{'titulo': 'Qual a capital do Brasil?',
           'correta': 'A'},
 
          {'titulo': 'Qual destes números é primo?',
-          'nivel': 'medio',
+          'nivel': 'facil',
           'opcoes': {'A': '259', 'B': '85', 'C': '49', 'D': '19'},
           'correta': 'D'},
         ]

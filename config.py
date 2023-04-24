@@ -16,8 +16,7 @@ BEGE_FUNDO = (230,226,216)
 # Variáveis
 tela_de_inicio = True
 tela_de_instrucoes = False
+tela_fim_de_jogo = False
 inicio_jogo = False
 pontuacao = 0
 dicionario_classificado = classifica_nivel(perguntas)
-questao_sorteada_facil = sorteia_questao(dicionario_classificado, 'facil')
-questao_sorteada_medio = sorteia_questao(dicionario_classificado, 'medio')
