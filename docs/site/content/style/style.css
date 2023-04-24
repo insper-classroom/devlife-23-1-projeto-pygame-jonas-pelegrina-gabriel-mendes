@@ -44,3 +44,17 @@ p {
     width: 15%;
     border-radius: 50%
 }
+#botao{
+    background-color: #EE8A6F;
+    color: #fff;
+    font-size: 3em;
+    font-weight: 400;
+    margin: 10;
+    padding: 10;
+    border-radius: 10px;
+    border: 2px solid #EE8A6F;
+}
+#botao:hover {
+    background-color: #D387F4;
+    border: 2px solid #D387F4;
+}
