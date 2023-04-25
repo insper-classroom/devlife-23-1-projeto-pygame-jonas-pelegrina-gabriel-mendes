@@ -179,6 +179,7 @@ while rodando:
             mensagem = fonte_jogo.render('Você perdeu...', True, LARANJA)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
 
+
             # Cria dimensões dos botões
             botoes = []
             largura = 200
@@ -194,6 +195,7 @@ while rodando:
             botoes.append(botao_jogar_novamente)
             botoes.append(botao_menu_principal)
             botoes.append(botao_sair)
+
 
             # Desenha botões
             for botao in botoes:
@@ -211,10 +213,6 @@ while rodando:
 
 
             
-            
-
-
-
         # Tela de vitória
         elif tela_venceu_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
