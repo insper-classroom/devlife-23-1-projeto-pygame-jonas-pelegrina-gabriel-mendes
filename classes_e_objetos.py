@@ -3,7 +3,7 @@ from config import *
 
 
 class Botao:
-    def _init_(self, x, y, largura, altura):
+    def __init__(self, x, y, largura, altura):
         self.x = x
         self.y = y
         self.largura = largura

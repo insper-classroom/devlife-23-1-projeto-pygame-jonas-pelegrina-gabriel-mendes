@@ -179,6 +179,11 @@ while rodando:
                     if botao_jogar.verifica_clique(evento.pos[0], evento.pos[1]):
                         tela_de_inicio = False
                         inicio_jogo = True
+                        questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+                
+                        # Timer do jogo
+                        timer, texto = 5, '5'.rjust(3)
+                        time.set_timer(USEREVENT, 1000)
                     elif botao_instrucoes.verifica_clique(evento.pos[0], evento.pos[1]):
                         tela_de_inicio = False
                         tela_de_instrucoes = True
