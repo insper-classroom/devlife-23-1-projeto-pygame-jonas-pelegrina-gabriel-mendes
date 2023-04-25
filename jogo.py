@@ -175,15 +175,43 @@ while rodando:
 
         # Tela de fim de jogo
         elif tela_fim_de_jogo:
-            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
+            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
             mensagem = fonte_jogo.render('Você perdeu...', True, LARANJA)
-            mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
-            mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
-            sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
-            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 + 80))
-            window.blit(mensagem2, (WIDTH/2 - mensagem2.get_width()/2, HEIGHT/2 - mensagem2.get_height()/2 + 120))
-            window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
-            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
+            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 50))
+
+            # Cria dimensões dos botões
+            botoes = []
+            largura = 200
+            altura = 60
+            x = WIDTH/2 - largura/2
+            y = 350
+            
+
+            # Cria botões
+            botao_jogar_novamente = Botao(x, y, largura, altura)
+            botao_menu_principal = Botao(x, y + 100, largura, altura)
+            botao_sair = Botao(WIDTH/2 - 120/2, 350 + 200, 120, 60)
+            botoes.append(botao_jogar_novamente)
+            botoes.append(botao_menu_principal)
+            botoes.append(botao_sair)
+
+            # Desenha botões
+            for botao in botoes:
+                botao.desenha(window, False)
+            
+
+            # Desenha textos do botões
+            jogar_novamente = fonte_jogo.render('Jogar novamente', True, (0, 0, 0))
+            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 20))
+            menu_principal = fonte_jogo.render('Menu principal', True, (0, 0, 0))
+            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 120))
+            sair = fonte_jogo.render('Sair', True, (0, 0, 0))
+            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 220))
+                
+
+
+            
+            
 
 
 
@@ -215,6 +243,7 @@ while rodando:
                         tela_de_inicio = False
                         inicio_jogo = True
                         questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+                        pontuacao = 0
                         # Timer do jogo
                         timer, texto = 5, '5'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
@@ -248,7 +277,6 @@ while rodando:
                             botao_a.desenha(window,True)
                             pontuacao += 1
                             success.play()
-                            inicio_jogo = True
                             questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
@@ -311,20 +339,28 @@ while rodando:
 
 
         elif tela_fim_de_jogo:
-            if evento.type == KEYDOWN and evento.key == K_r:
-                mixer.music.play()
-                tela_fim_de_jogo = False
-                inicio_jogo = True
-                questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+            if evento.type == MOUSEBUTTONUP:
+                if evento.button == 1:
+                    if botao_jogar_novamente.verifica_clique(evento.pos[0], evento.pos[1]):
+                        mixer.music.play()
+                        tela_fim_de_jogo = False
+                        inicio_jogo = True
+                        questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+                        pontuacao = 0
                 
-                # Timer do jogo
-                timer, texto = 5, '5'.rjust(3)
-                time.set_timer(USEREVENT, 1000)
+                        # Timer do jogo
+                        timer, texto = 5, '5'.rjust(3)
+                        time.set_timer(USEREVENT, 1000)
+                    
+                    elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):
+                        tela_fim_de_jogo = False
+                        tela_de_inicio = True
 
 
-            elif evento.type == KEYDOWN and evento.key == K_m:
-                tela_fim_de_jogo = False
-                tela_de_inicio = True
+                    elif botao_sair.verifica_clique(evento.pos[0], evento.pos[1]):
+                        rodando = False
+
+
         
         elif tela_venceu_jogo:
             if evento.type == KEYDOWN and evento.key == K_r:
