@@ -1,3 +1,4 @@
+# Perguntas geradas utilizando ChatGPT
 perguntas = [
          {'titulo': 'Qual a capital do Brasil?',
           'nivel': 'Fácil',
@@ -39,4 +40,57 @@ perguntas = [
           'nivel': 'difícil',
           'opcoes': {'A': '79', 'B': '92', 'C': '88', 'D': '54'},
           'correta': 'B'},
+          {'titulo': 'Qual é a capital do Brasil?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Brasília', 'B': 'São Paulo', 'C': 'Rio de Janeiro', 'D': 'Belo Horizonte'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual é o maior planeta do sistema solar?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Marte', 'B': 'Vênus', 'C': 'Júpiter', 'D': 'Saturno'},
+          'correta': 'C'},
+
+          {'titulo': 'Qual foi o primeiro presidente dos Estados Unidos?',
+          'nivel': 'Médio',
+          'opcoes': {'A': 'Thomas Jefferson', 'B': 'John F. Kennedy', 'C': 'George Washington', 'D': 'Abraham Lincoln'},
+          'correta': 'C'},
+
+          {'titulo': 'Qual é o nome da maior cordilheira do mundo?',
+          'nivel': 'Médio',
+          'opcoes': {'A': 'Andes', 'B': 'Himalaia', 'C': 'Rockies', 'D': 'Alpes'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual é o nome do ator que interpretou Harry Potter nos filmes?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Rupert Grint', 'B': 'Daniel Radcliffe', 'C': 'Tom Felton', 'D': 'Emma Watson'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual é o nome da maior floresta tropical do mundo?',
+          'nivel': 'Médio',
+          'opcoes': {'A': 'Amazônia', 'B': 'Congo', 'C': 'Bornéu', 'D': 'Papua Nova Guiné'},
+          'correta': 'A'},
+          {'titulo': 'Qual é o animal nacional da Austrália?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Canguru', 'B': 'Koala', 'C': 'Wombat', 'D': 'Diabo-da-tasmânia'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual é o maior oceano do mundo?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Oceano Atlântico', 'B': 'Oceano Pacífico', 'C': 'Oceano Índico', 'D': 'Oceano Ártico'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual é a maior cadeia montanhosa do mundo?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Montanhas Rochosas', 'B': 'Himalaia', 'C': 'Andes', 'D': 'Alpes'},
+          'correta': 'B'},
+
+          {'titulo': 'Quem escreveu a obra "Dom Quixote"?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Miguel de Cervantes', 'B': 'William Shakespeare', 'C': 'Friedrich Nietzsche', 'D': 'Jorge Luis Borges'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual é a capital da Argentina?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Buenos Aires', 'B': 'Rio de Janeiro', 'C': 'Montevidéu', 'D': 'Assunção'},
+          'correta': 'A'}
         ]
