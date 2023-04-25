@@ -50,7 +50,7 @@ while rodando:
 
         # Desenha botões
         for botao in botoes:
-            botao.desenha(window,False)
+            botao.desenha(window, False)
         
 
         # Desenha textos
@@ -80,7 +80,6 @@ while rodando:
             regras10 = fonte_jogo.render('mais difíceis e o tempo de resposta diminua.', True, (0, 0, 0))
             regras11 = fonte_jogo.render('Para ganhar o jogo, o jogador precisa responder', True, (0, 0, 0))
             regras12 = fonte_jogo.render('todas as perguntas corretamente sem errar nenhuma.', True, (0, 0, 0))
-            inicio = fonte_jogo.render('Pressione [i] para voltar a tela inicial', True, LARANJA)
 
             window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 - 200))
             window.blit(instrucoes_detalhe, (WIDTH/2 - instrucoes_detalhe.get_width()/2 - 220, HEIGHT/2 - instrucoes_detalhe.get_height()/2 - 185))
@@ -97,7 +96,19 @@ while rodando:
             window.blit(regras10, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 80))
             window.blit(regras11, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 110))
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
-            window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
+            
+
+            largura = 120
+            altura = 60
+            x = WIDTH/2 - largura/2
+            y = 550
+
+
+            botao_voltar = Botao(x, y, largura, altura)
+            botao_voltar.desenha(window, False)
+
+            voltar = fonte_jogo.render('Voltar', True, (0, 0, 0))
+            window.blit(voltar, (WIDTH/2 - voltar.get_width()/2, HEIGHT/2 - voltar.get_height()/2 + 220))
 
 
 
@@ -207,9 +218,11 @@ while rodando:
 
 
         elif tela_de_instrucoes:
-            if evento.type == KEYDOWN and evento.key == K_i:
-                tela_de_instrucoes = False
-                tela_de_inicio = True
+            if evento.type == MOUSEBUTTONUP:
+                if evento.button == 1:
+                    if botao_voltar.verifica_clique(evento.pos[0], evento.pos[1]):
+                        tela_de_instrucoes = False
+                        tela_de_inicio = True
 
 
         elif inicio_jogo:
