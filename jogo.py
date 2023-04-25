@@ -1,6 +1,7 @@
 # ===== Inicialização =====
 # Importa pacotes
 from pygame import *
+from classes_e_objetos import *
 from config import *
 from assets import *
 from perguntas_e_respostas import *
@@ -25,14 +26,38 @@ rodando = True
 while rodando:
     window.fill (BEGE_FUNDO)
 
-
+    # Tela de início
     if tela_de_inicio:
-        window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
-        start = fonte_jogo.render('Pressione qualquer tecla para começar', True, (0, 0, 0))
-        instrucoes = fonte_jogo.render('Pressione [i] para ler as instruções do jogo', True, (0, 0, 0))
-        window.blit(start, (WIDTH/2 - start.get_width()/2, HEIGHT/2 - start.get_height()/2 + 80))
-        window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2, HEIGHT/2 - instrucoes.get_height()/2 + 120))
+        window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
+    
+        # Cria dimensões dos botões
+        botoes = []
+        largura = 120
+        altura = 60
+        x = WIDTH/2 - largura/2
+        y = 350
+        
 
+        # Cria botões
+        botao_jogar = Botao(x, y, largura, altura)
+        botao_instrucoes = Botao(x, y + 100, largura, altura)
+        botao_sair = Botao(x, y + 200, largura, altura)
+        botoes.append(botao_jogar)
+        botoes.append(botao_instrucoes)
+        botoes.append(botao_sair)
+
+        # Desenha botões
+        for botao in botoes:
+            botao.desenha(window)
+        
+
+        # Desenha textos
+        jogar = fonte_jogo.render('Jogar', True, (0, 0, 0))
+        window.blit(jogar, (WIDTH/2 - jogar.get_width()/2, HEIGHT/2 - jogar.get_height()/2 + 20))
+        instrucoes = fonte_jogo.render('Instruções', True, (0, 0, 0))
+        window.blit(instrucoes, (WIDTH/2 - instrucoes.get_width()/2, HEIGHT/2 - instrucoes.get_height()/2 + 120))
+        sair = fonte_jogo.render('Sair', True, (0, 0, 0))
+        window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 220))
 
     else:
 
@@ -71,6 +96,10 @@ while rodando:
             window.blit(regras11, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 110))
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
             window.blit(inicio, (WIDTH/2 - inicio.get_width()/2, HEIGHT/2 - inicio.get_height()/2 + 180))
+
+
+
+
         elif inicio_jogo:
             # Criando retangulo
             window.blit(retangulo_a,(350, 300))
@@ -118,6 +147,10 @@ while rodando:
             window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
             window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
 
+
+
+
+
         # Tela de vitória
         elif tela_venceu_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
@@ -141,18 +174,17 @@ while rodando:
             rodando = False
 
         if tela_de_inicio:
-            if evento.type == KEYDOWN:
-                if evento.key == K_i:
-                    tela_de_inicio = False
-                    tela_de_instrucoes = True
-                else:
-                    tela_de_inicio = False
-                    inicio_jogo = True
-                    questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
-
-                    # Timer do jogo
-                    timer, texto = 5, '5'.rjust(3)
-                    time.set_timer(USEREVENT, 1000)
+            if evento.type == MOUSEBUTTONUP:
+                if evento.button == 1:
+                    if botao_jogar.verifica_clique(evento.pos[0], evento.pos[1]):
+                        tela_de_inicio = False
+                        inicio_jogo = True
+                    elif botao_instrucoes.verifica_clique(evento.pos[0], evento.pos[1]):
+                        tela_de_inicio = False
+                        tela_de_instrucoes = True
+                    elif botao_sair.verifica_clique(evento.pos[0], evento.pos[1]):
+                        rodando = False
+                        
 
 
         elif tela_de_instrucoes:
