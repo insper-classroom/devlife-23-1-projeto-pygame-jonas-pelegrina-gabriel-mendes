@@ -10,6 +10,9 @@ from funcoes import *
 # Inicia módulos do Pygame
 init()
 mixer.music.load('assets/sons/fundo.mp3')
+success = mixer.Sound('assets/sons/success.mp3')
+fail = mixer.Sound('assets/sons/fail.mp3')
+
 
 
 # ----- Gera tela principal
@@ -222,46 +225,62 @@ while rodando:
                         if resposta == "A":
                             botao_a.desenha(window,True)
                             pontuacao += 1
-                            print(pontuacao)
+                            success.play()
                             inicio_jogo = True
                             questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
+                            inicio_jogo = False
                             tela_fim_de_jogo = True
+                            mixer.music.pause()
+                            fail.play()
                     elif botao_b.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "B":
                             botao_b.desenha(window,True)
                             pontuacao += 1
-                            print(pontuacao)
+                            success.play()
                             inicio_jogo = True
                             questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
+                            inicio_jogo = False
                             tela_fim_de_jogo = True
+                            mixer.music.pause()
+                            fail.play()
                     elif botao_c.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "C":
                             botao_c.desenha(window,True)
                             pontuacao += 1
-                            print(pontuacao)
+                            success.play()
                             inicio_jogo = True
                             questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
+                        else:
+                            inicio_jogo = False
+                            tela_fim_de_jogo = True
+                            mixer.music.pause()
+                            fail.play()
                     elif botao_d.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "D":
                             botao_d.desenha(window,True)
                             pontuacao += 1
-                            print(pontuacao)
+                            success.play()
                             inicio_jogo = True
                             questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
+                        else:
+                            inicio_jogo = False
+                            tela_fim_de_jogo = True
+                            mixer.music.pause()
+                            fail.play()
 
 
             elif evento.type == KEYDOWN and evento.key == K_a:
@@ -271,6 +290,7 @@ while rodando:
 
         elif tela_fim_de_jogo:
             if evento.type == KEYDOWN and evento.key == K_r:
+                mixer.music.play()
                 tela_fim_de_jogo = False
                 inicio_jogo = True
                 questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
@@ -286,6 +306,7 @@ while rodando:
         
         elif tela_venceu_jogo:
             if evento.type == KEYDOWN and evento.key == K_r:
+                mixer.music.play()
                 tela_venceu_jogo = False
                 inicio_jogo = True
                 questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
