@@ -53,7 +53,7 @@ while rodando:
             botao.desenha(window, False)
         
 
-        # Desenha textos
+        # Desenha textos do botões
         jogar = fonte_jogo.render('Jogar', True, (0, 0, 0))
         window.blit(jogar, (WIDTH/2 - jogar.get_width()/2, HEIGHT/2 - jogar.get_height()/2 + 20))
         instrucoes = fonte_jogo.render('Instruções', True, (0, 0, 0))
@@ -97,16 +97,18 @@ while rodando:
             window.blit(regras11, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 110))
             window.blit(regras12, (WIDTH/2 - instrucoes.get_width()/2 - 220, HEIGHT/2 - instrucoes.get_height()/2 + 130))
             
-
+            # Cria dimensão do botão
             largura = 120
             altura = 60
             x = WIDTH/2 - largura/2
             y = 550
 
-
+            # Cria e desenha botão
             botao_voltar = Botao(x, y, largura, altura)
             botao_voltar.desenha(window, False)
 
+
+            # Desenha texto dos botão
             voltar = fonte_jogo.render('Voltar', True, (0, 0, 0))
             window.blit(voltar, (WIDTH/2 - voltar.get_width()/2, HEIGHT/2 - voltar.get_height()/2 + 220))
 
@@ -117,18 +119,29 @@ while rodando:
             # Pergunta do jogo
             draw.rect(window, LARANJA, (WIDTH/2 - 500, HEIGHT/10, 1000, 100))
             titulo = fonte_jogo.render(questao_sorteada_Fácil['titulo'], True, PRETO)
-            #OPÇÕES PARA COLOCAR NO JOGO
+
+
+            # Opções de respostas
             opcoes = questao_sorteada_Fácil['opcoes']
-            #DESENHA O TEXTO DAS OPÇÕES
+
+
+            # Desenha as opções na tela
             opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
             opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
             opcao_c = fonte_jogo.render('C: ' + opcoes['C'], True, PRETO)
             opcao_d = fonte_jogo.render('D: ' + opcoes['D'], True, PRETO)
+
+
+            # Reposta correta
             resposta = questao_sorteada_Fácil['correta']
-            #DESENHA O TITULO
+
+
+            # Desenha o título na tela
             window.blit (titulo, (WIDTH/2 - 450, HEIGHT/10 - titulo.get_height()/2 + 50))
-            botoes_jogo = []
+
+
             # Cria botões
+            botoes_jogo = []
             botao_a = Botao(350, 300, 220, 100)
             botao_b = Botao(600, 300 ,220, 100)
             botao_c = Botao(350, 420, 220, 100)
@@ -152,7 +165,7 @@ while rodando:
             nivel = fonte_jogo.render(questao_sorteada_Fácil['nivel'], True, BRANCO)
             window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/5 - nivel.get_height()/2))
 
-            # PONTUAÇÃO
+            # Pontuação	do jogador
             nivel = fonte_jogo.render("Pontuação: " + str(pontuacao), True, BRANCO)
             window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/6 - nivel.get_height()))
 
@@ -174,8 +187,6 @@ while rodando:
 
 
 
-
-
         # Tela de vitória
         elif tela_venceu_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
@@ -187,8 +198,6 @@ while rodando:
             window.blit(mensagem2, (WIDTH/2 - mensagem2.get_width()/2, HEIGHT/2 - mensagem2.get_height()/2 + 120))
             window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
             window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
-
-
 
 
 
