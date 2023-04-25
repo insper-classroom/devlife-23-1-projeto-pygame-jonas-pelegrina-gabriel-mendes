@@ -18,7 +18,6 @@ header{
     padding: 1.5em;
 }
 
-
 body{
     background-color: #E6E2D8;
     color: #fff;
@@ -26,7 +25,6 @@ body{
     margin: 0;
     padding: 0;
 }
-
 
 .titulo-logo{
     text-align: center;
@@ -37,7 +35,6 @@ body{
     padding: 0;
 }
 
-
 .subtitulo-logo{
     text-align: center;
     font-size: 2em;
@@ -47,8 +44,6 @@ body{
     margin-top: 0.2em;
     padding: 0;
 }
-
-
 
 .cards{
     display: flex;
@@ -66,7 +61,6 @@ body{
     padding: 10;   
 }
 
-
 .organic_laranja{
     display: grid;
     background-color: #EE8A6F;
@@ -79,7 +73,6 @@ body{
     border: 5px solid #EE8A6F;
 
 }
-
 
 .organic_roxo{  
     background-color: #D387F4;
@@ -105,7 +98,6 @@ body{
     border: 0em solid #19241F;
 }
 
-
 .botao:hover{
     background-color: #D387F4;
     border: 0em solid #D387F4;
@@ -120,7 +112,6 @@ footer{
     padding: 1.5em;
 }
 
-
 h1{
     line-height: 1;
     color: #fff;
@@ -130,7 +121,6 @@ h1{
     margin: 0;
     padding: 0;
 }
-
 
 h2{
     color: #19241F;
@@ -149,6 +139,7 @@ h2{
     margin-top: 1em;
 
 }
+
 .devs{
     color: #19241F;
     height: auto;
