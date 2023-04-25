@@ -15,4 +15,4 @@ class Botao:
         return False
 
     def desenha(self, window):
-        draw.rect(window, LARANJA, (self.x, self.y, self.largura, self.altura))
+        draw.rect(window, LARANJA, (self.x, self.y, self.largura, self.altura),border_radius = 15)
