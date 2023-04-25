@@ -14,5 +14,8 @@ class Botao:
             return True
         return False
 
-    def desenha(self, window):
-        draw.rect(window, LARANJA, (self.x, self.y, self.largura, self.altura),border_radius = 15)
+    def desenha(self, window, pressed):
+        if pressed == False:
+            draw.rect(window, ROXO, (self.x, self.y, self.largura, self.altura),border_radius = 15)
+        else:
+            draw.rect(window, LARANJA, (self.x, self.y, self.largura, self.altura),border_radius = 15)
