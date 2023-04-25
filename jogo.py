@@ -136,7 +136,12 @@ while rodando:
             
             # Texto/Dificuldade
             nivel = fonte_jogo.render(questao_sorteada_Fácil['nivel'], True, BRANCO)
-            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/6 - nivel.get_height()/2))
+            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/5 - nivel.get_height()/2))
+
+            # PONTUAÇÃO
+            nivel = fonte_jogo.render("Pontuação: " + str(pontuacao), True, BRANCO)
+            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/6 - nivel.get_height()))
+
             # Timer do jogo
             window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
         
