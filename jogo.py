@@ -9,7 +9,7 @@ from funcoes import *
 
 # Inicia módulos do Pygame
 init()
-mixer.init()
+mixer.music.load('assets/sons/fundo.mp3')
 
 
 # ----- Gera tela principal
@@ -23,7 +23,7 @@ display.set_icon(simbolo)
 # ----- Código principal
 rodando = True
 while rodando:
-    window.fill (BEGE_FUNDO)
+    window.fill(BEGE_FUNDO)
 
     # Tela de início
     if tela_de_inicio:
@@ -188,6 +188,7 @@ while rodando:
             if evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if botao_jogar.verifica_clique(evento.pos[0], evento.pos[1]):
+                        mixer.music.play()
                         tela_de_inicio = False
                         inicio_jogo = True
                         questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
@@ -227,6 +228,8 @@ while rodando:
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
+                        else:
+                            tela_fim_de_jogo = True
                     elif botao_b.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "B":
                             botao_b.desenha(window,True)
@@ -237,6 +240,8 @@ while rodando:
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
+                        else:
+                            tela_fim_de_jogo = True
                     elif botao_c.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "C":
                             botao_c.desenha(window,True)
