@@ -135,11 +135,11 @@ while rodando:
             botoes_jogo.append(botao_c)
             botoes_jogo.append(botao_d)
 
-            # Desenha botões
+            # Desenha os botões na tela
             for botao in botoes_jogo:
                 botao.desenha(window, False)
                 
-            # Cria e desenha texto das opções
+            # Cria e desenha texto das opções na tela
             opcoes = questao_sorteada['opcoes']
             opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
             opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
@@ -150,13 +150,13 @@ while rodando:
             window.blit (opcao_c, (WIDTH/2 - opcao_b.get_width()/2 - 200, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2, HEIGHT/10 - opcao_d.get_height()/2 + 400))
             
-            # Texto/Dificuldade
-            nivel = fonte_jogo.render(questao_sorteada['nivel'], True, BRANCO)
-            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/5 - nivel.get_height()/2))
+            # Desenha o Texto/Dificuldade na tela
+            nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, BRANCO)
+            window.blit (nivel_atual, (WIDTH/2 - nivel_atual.get_width()/2 + 400, HEIGHT/5 - nivel_atual.get_height()/2))
 
             # Pontuação	do jogador
-            nivel = fonte_jogo.render("Pontuação: " + str(pontuacao), True, BRANCO)
-            window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/6 - nivel.get_height()))
+            pontuacao_jogador = fonte_jogo.render("Pontuação: " + str(pontuacao), True, BRANCO)
+            window.blit (pontuacao_jogador, (WIDTH/2 - pontuacao_jogador.get_width()/2 + 400, HEIGHT/6 - pontuacao_jogador.get_height()))
 
             # Timer do jogo
             window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
