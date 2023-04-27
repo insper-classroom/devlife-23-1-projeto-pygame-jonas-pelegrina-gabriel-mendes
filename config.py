@@ -21,4 +21,3 @@ tela_fim_de_jogo = False
 tela_venceu_jogo = False
 inicio_jogo = False
 pontuacao = 0
-dicionario_classificado = classifica_nivel(perguntas)

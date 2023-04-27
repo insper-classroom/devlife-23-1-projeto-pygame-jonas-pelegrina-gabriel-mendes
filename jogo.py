@@ -116,29 +116,13 @@ while rodando:
 
 
         elif inicio_jogo:
-            # Pergunta do jogo
+            # Desenha o fundo
             draw.rect(window, LARANJA, (WIDTH/2 - 500, HEIGHT/10, 1000, 100))
-            titulo = fonte_jogo.render(questao_sorteada_Fácil['titulo'], True, PRETO)
-
-
-            # Opções de respostas
-            opcoes = questao_sorteada_Fácil['opcoes']
-
-
-            # Desenha as opções na tela
-            opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
-            opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
-            opcao_c = fonte_jogo.render('C: ' + opcoes['C'], True, PRETO)
-            opcao_d = fonte_jogo.render('D: ' + opcoes['D'], True, PRETO)
-
-
-            # Reposta correta
-            resposta = questao_sorteada_Fácil['correta']
 
 
             # Desenha o título na tela
+            titulo = fonte_jogo.render(questao_sorteada['titulo'], True, PRETO)
             window.blit (titulo, (WIDTH/2 - 450, HEIGHT/10 - titulo.get_height()/2 + 50))
-
 
             # Cria botões
             botoes_jogo = []
@@ -153,16 +137,21 @@ while rodando:
 
             # Desenha botões
             for botao in botoes_jogo:
-                botao.desenha(window,False)
+                botao.desenha(window, False)
                 
-            # Desenha texto dos botões
+            # Cria e desenha texto das opções
+            opcoes = questao_sorteada['opcoes']
+            opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
+            opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
+            opcao_c = fonte_jogo.render('C: ' + opcoes['C'], True, PRETO)
+            opcao_d = fonte_jogo.render('D: ' + opcoes['D'], True, PRETO)
             window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 200, HEIGHT/10 - opcao_a.get_height()/2 + 280))
             window.blit (opcao_b, (WIDTH/2 - opcao_c.get_width()/4, HEIGHT/10 - opcao_c.get_height()/2 + 280))
             window.blit (opcao_c, (WIDTH/2 - opcao_b.get_width()/2 - 200, HEIGHT/10 - opcao_b.get_height()/2 + 400))
             window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2, HEIGHT/10 - opcao_d.get_height()/2 + 400))
             
             # Texto/Dificuldade
-            nivel = fonte_jogo.render(questao_sorteada_Fácil['nivel'], True, BRANCO)
+            nivel = fonte_jogo.render(questao_sorteada['nivel'], True, BRANCO)
             window.blit (nivel, (WIDTH/2 - nivel.get_width()/2 + 400, HEIGHT/5 - nivel.get_height()/2))
 
             # Pontuação	do jogador
@@ -171,6 +160,15 @@ while rodando:
 
             # Timer do jogo
             window.blit(fonte_jogo.render(texto, True, (0, 0, 0)), (32, 48))
+
+            # Reposta correta
+            resposta = questao_sorteada['correta']
+
+            # Nível da questão
+            nivel = questao_sorteada['nivel']
+
+            # Índice da questão atual no banco de questão
+            indice = (dicionario_classificado[nivel].index (questao_sorteada))
         
 
         # Tela de fim de jogo
@@ -215,14 +213,39 @@ while rodando:
             
         # Tela de vitória
         elif tela_venceu_jogo:
-            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 80))
-            mensagem = fonte_jogo.render('Você venceu!', True, (0, 0, 0))
-            mensagem2 = fonte_jogo.render('Se quiser jogar novamente, pressione [r]', True, (0, 0, 0))
-            mensagem3 = fonte_jogo.render('Se quiser voltar ao menu inicial, pressione [m]', True, (0, 0, 0))
-            sair = fonte_jogo.render('Se quiser sair do jogo, pressione [ESC]', True, (0, 0, 0))
-            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 + 80))
-            window.blit(mensagem2, (WIDTH/2 - mensagem2.get_width()/2, HEIGHT/2 - mensagem2.get_height()/2 + 120))
-            window.blit(mensagem3, (WIDTH/2 - mensagem3.get_width()/2, HEIGHT/2 - mensagem3.get_height()/2 + 160))
+            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
+            mensagem = fonte_jogo.render('Você venceu!', True, LARANJA)
+            window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
+
+
+            # Cria dimensões dos botões
+            botoes = []
+            largura = 200
+            altura = 60
+            x = WIDTH/2 - largura/2
+            y = 370
+            
+
+            # Cria botões
+            botao_jogar_novamente = Botao(x, y, largura, altura)
+            botao_menu_principal = Botao(x, y + 80, largura, altura)
+            botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura)
+            botoes.append(botao_jogar_novamente)
+            botoes.append(botao_menu_principal)
+            botoes.append(botao_sair)
+
+
+            # Desenha botões
+            for botao in botoes:
+                botao.desenha(window, False)
+            
+
+            # Desenha textos do botões
+            jogar_novamente = fonte_jogo.render('Jogar novamente', True, (0, 0, 0))
+            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 40))
+            menu_principal = fonte_jogo.render('Menu principal', True, (0, 0, 0))
+            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 120))
+            sair = fonte_jogo.render('Sair', True, (0, 0, 0))
             window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
 
 
@@ -240,11 +263,15 @@ while rodando:
                         mixer.music.play()
                         tela_de_inicio = False
                         inicio_jogo = True
-                        questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                         pontuacao = 0
+                        dicionario_classificado = classifica_nivel(perguntas)
+                        questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
+
                         # Timer do jogo
                         timer, texto = 5, '5'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
+
+
                     elif botao_instrucoes.verifica_clique(evento.pos[0], evento.pos[1]):
                         tela_de_inicio = False
                         tela_de_instrucoes = True
@@ -275,10 +302,23 @@ while rodando:
                 if evento.button == 1:
                     if botao_a.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "A":
-                            botao_a.desenha(window,True)
+                            botao_a.desenha(window, True)
                             pontuacao += 1
                             success.play()
-                            questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+
+                            # Retira questão do dicionário
+                            del (dicionario_classificado[nivel][indice])
+
+                            # Condições de nível de dificuldade
+                            if pontuacao < 5:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
+                            elif 5 <= pontuacao < 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
+                            elif pontuacao == 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
+                            else:
+                                inicio_jogo = False
+                                tela_venceu_jogo = True
 
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
@@ -291,11 +331,23 @@ while rodando:
 
                     elif botao_b.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "B":
-                            botao_b.desenha(window,True)
+                            botao_b.desenha(window, True)
                             pontuacao += 1
                             success.play()
-                            inicio_jogo = True
-                            questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+
+                            # Retira questão do dicionário
+                            del (dicionario_classificado[nivel][indice])
+
+                            # Condições de nível de dificuldade
+                            if pontuacao < 5:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
+                            elif 5 <= pontuacao < 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
+                            elif pontuacao == 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
+                            else:
+                                inicio_jogo = False
+                                tela_venceu_jogo = True
 
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
@@ -308,11 +360,23 @@ while rodando:
 
                     elif botao_c.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "C":
-                            botao_c.desenha(window,True)
+                            botao_c.desenha(window, True)
                             pontuacao += 1
                             success.play()
-                            inicio_jogo = True
-                            questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+                            
+                            # Retira questão do dicionário
+                            del (dicionario_classificado[nivel][indice])
+
+                            # Condições de nível de dificuldade
+                            if pontuacao < 5:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
+                            elif 5 <= pontuacao < 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
+                            elif pontuacao == 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
+                            else:
+                                inicio_jogo = False
+                                tela_venceu_jogo = True
 
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
@@ -325,11 +389,23 @@ while rodando:
 
                     elif botao_d.verifica_clique(evento.pos[0], evento.pos[1]):
                         if resposta == "D":
-                            botao_d.desenha(window,True)
+                            botao_d.desenha(window, True)
                             pontuacao += 1
                             success.play()
-                            inicio_jogo = True
-                            questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+                            
+                            # Retira questão do dicionário
+                            del (dicionario_classificado[nivel][indice])
+
+                            # Condições de nível de dificuldade
+                            if pontuacao < 5:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
+                            elif 5 <= pontuacao < 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
+                            elif pontuacao == 10:
+                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
+                            else:
+                                inicio_jogo = False
+                                tela_venceu_jogo = True
 
                             # Timer do jogo
                             timer, texto = 5, '5'.rjust(3)
@@ -353,8 +429,9 @@ while rodando:
                         mixer.music.play()
                         tela_fim_de_jogo = False
                         inicio_jogo = True
-                        questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
                         pontuacao = 0
+                        dicionario_classificado = classifica_nivel(perguntas)
+                        questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                         # Timer do jogo
                         timer, texto = 5, '5'.rjust(3)
@@ -371,23 +448,29 @@ while rodando:
 
         
         elif tela_venceu_jogo:
-            if evento.type == KEYDOWN and evento.key == K_r:
-                mixer.music.play()
-                tela_venceu_jogo = False
-                inicio_jogo = True
-                questao_sorteada_Fácil = sorteia_questao(dicionario_classificado, 'Fácil')
+            if evento.type == MOUSEBUTTONUP:
+                if evento.button == 1:
+                    if botao_jogar_novamente.verifica_clique(evento.pos[0], evento.pos[1]):
+                        mixer.music.play()
+                        tela_fim_de_jogo = False
+                        inicio_jogo = True
+                        pontuacao = 0
+                        dicionario_classificado = classifica_nivel(perguntas)
+                        questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
-                # Timer do jogo
-                timer, texto = 5, '5'.rjust(3)
-                time.set_timer(USEREVENT, 1000)
+                        # Timer do jogo
+                        timer, texto = 5, '5'.rjust(3)
+                        time.set_timer(USEREVENT, 1000)
+                    
+                    elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):
+                        tela_fim_de_jogo = False
+                        tela_de_inicio = True
 
 
-            elif evento.type == KEYDOWN and evento.key == K_m:
-                tela_venceu_jogo = False
-                tela_de_inicio = True
+                    elif botao_sair.verifica_clique(evento.pos[0], evento.pos[1]):
+                        rodando = False
 
                 
-            
     clock.tick(FPS)
     display.update()
 
