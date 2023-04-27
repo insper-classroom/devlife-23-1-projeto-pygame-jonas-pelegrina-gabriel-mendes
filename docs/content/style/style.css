@@ -101,6 +101,13 @@ body{
     border-radius: 50px;
     border: 5px solid #D387F4;
     flex-grow: 1;
+
+}
+
+.teste{
+    align-content: center;
+    
+    
 }
 
 .botao{
@@ -163,6 +170,21 @@ h2{
     width: 8em;
     border-radius: 50%
 }
+
 .video{
-    margin-top: 1rem;
+    margin-top: 2em;
+}
+
+.download{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.agradecimentos{
+    margin-top: 2em;
+}
+
+.mensagem_devs{
+    margin-top: 2em;
 }
