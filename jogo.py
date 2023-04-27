@@ -174,6 +174,8 @@ while rodando:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
             mensagem = fonte_jogo.render('Você perdeu...', True, LARANJA)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
+            pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
+            window.blit(pontuacao_final, (WIDTH/2 - pontuacao_final.get_width()/2, HEIGHT/2 - pontuacao_final.get_height()/2 + 5))
 
 
             # Cria dimensões dos botões
@@ -181,7 +183,7 @@ while rodando:
             largura = 200
             altura = 60
             x = WIDTH/2 - largura/2
-            y = 370
+            y = 400
             
 
             # Cria botões
@@ -200,11 +202,11 @@ while rodando:
 
             # Desenha textos do botões
             jogar_novamente = fonte_jogo.render('Jogar novamente', True, (0, 0, 0))
-            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 40))
+            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 70))
             menu_principal = fonte_jogo.render('Menu principal', True, (0, 0, 0))
-            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 120))
+            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 150))
             sair = fonte_jogo.render('Sair', True, (0, 0, 0))
-            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
+            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 230))
                 
 
 
@@ -212,8 +214,10 @@ while rodando:
         # Tela de vitória
         elif tela_venceu_jogo:
             window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
-            mensagem = fonte_jogo.render('Você venceu!', True, LARANJA)
+            mensagem = fonte_jogo.render('Você ganhou!', True, LARANJA)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
+            pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
+            window.blit(pontuacao_final, (WIDTH/2 - pontuacao_final.get_width()/2, HEIGHT/2 - pontuacao_final.get_height()/2 + 5))
 
 
             # Cria dimensões dos botões
@@ -221,7 +225,7 @@ while rodando:
             largura = 200
             altura = 60
             x = WIDTH/2 - largura/2
-            y = 370
+            y = 400
             
 
             # Cria botões
@@ -240,11 +244,11 @@ while rodando:
 
             # Desenha textos do botões
             jogar_novamente = fonte_jogo.render('Jogar novamente', True, (0, 0, 0))
-            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 40))
+            window.blit(jogar_novamente, (WIDTH/2 - jogar_novamente.get_width()/2, HEIGHT/2 - jogar_novamente.get_height()/2 + 70))
             menu_principal = fonte_jogo.render('Menu principal', True, (0, 0, 0))
-            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 120))
+            window.blit(menu_principal, (WIDTH/2 - menu_principal.get_width()/2, HEIGHT/2 - menu_principal.get_height()/2 + 150))
             sair = fonte_jogo.render('Sair', True, (0, 0, 0))
-            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 200))
+            window.blit(sair, (WIDTH/2 - sair.get_width()/2, HEIGHT/2 - sair.get_height()/2 + 230))
 
 
 
