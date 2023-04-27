@@ -21,3 +21,8 @@ retangulo_a = transform.scale(retangulo_a, (208, 120))
 retangulo_b = transform.scale(retangulo_b, (208, 120))
 retangulo_c = transform.scale(retangulo_c, (208, 120))
 retangulo_d = transform.scale(retangulo_d, (208, 120))
+
+# ----- Sons e efeitos sonoros
+mixer.music.load('assets/sons/fundo.mp3')
+success = mixer.Sound('assets/sons/success.mp3')
+fail = mixer.Sound('assets/sons/fail.mp3')

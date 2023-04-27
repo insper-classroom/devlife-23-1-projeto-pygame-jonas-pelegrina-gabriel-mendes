@@ -9,16 +9,14 @@ from funcoes import *
 
 # Inicia módulos do Pygame
 init()
-mixer.music.load('assets/sons/fundo.mp3')
-success = mixer.Sound('assets/sons/success.mp3')
-fail = mixer.Sound('assets/sons/fail.mp3')
-
 
 
 # ----- Gera tela principal
 window = display.set_mode((WIDTH, HEIGHT))
 clock = time.Clock()
 display.set_caption('Quiz Hero')
+
+
 # Símbolo do Pygame
 display.set_icon(simbolo)
 
@@ -268,7 +266,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
 
                         # Timer do jogo
-                        timer, texto = 5, '5'.rjust(3)
+                        timer, texto = 15, '15'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
 
 
@@ -317,11 +315,12 @@ while rodando:
                             elif pontuacao == 10:
                                 questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
                             else:
+                                mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
 
                             # Timer do jogo
-                            timer, texto = 5, '5'.rjust(3)
+                            timer, texto = 15, '15'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
                             inicio_jogo = False
@@ -346,11 +345,12 @@ while rodando:
                             elif pontuacao == 10:
                                 questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
                             else:
+                                mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
 
                             # Timer do jogo
-                            timer, texto = 5, '5'.rjust(3)
+                            timer, texto = 15, '15'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
                             inicio_jogo = False
@@ -375,11 +375,12 @@ while rodando:
                             elif pontuacao == 10:
                                 questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
                             else:
+                                mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
 
                             # Timer do jogo
-                            timer, texto = 5, '5'.rjust(3)
+                            timer, texto = 15, '15'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
                             inicio_jogo = False
@@ -404,22 +405,18 @@ while rodando:
                             elif pontuacao == 10:
                                 questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
                             else:
+                                mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
 
                             # Timer do jogo
-                            timer, texto = 5, '5'.rjust(3)
+                            timer, texto = 15, '15'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
                         else:
                             inicio_jogo = False
                             tela_fim_de_jogo = True
                             mixer.music.pause()
                             fail.play()
-
-
-            elif evento.type == KEYDOWN and evento.key == K_a:
-                inicio_jogo = False
-                tela_venceu_jogo = True
 
 
         elif tela_fim_de_jogo:
@@ -434,7 +431,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                         # Timer do jogo
-                        timer, texto = 5, '5'.rjust(3)
+                        timer, texto = 15, '15'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
                     
                     elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):
@@ -459,7 +456,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                         # Timer do jogo
-                        timer, texto = 5, '5'.rjust(3)
+                        timer, texto = 15, '15'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
                     
                     elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):
