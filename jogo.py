@@ -313,16 +313,16 @@ while rodando:
 
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
-
-                            # Condições de nível de dificuldade
-                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
                             
                             # Verifica se ganhou o jogo
-                            if questao_sorteada == 'Ganhou':
+                            if nivel == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
-
+                            else:
+                                # Condições de nível de dificuldade
+                                questao_sorteada = questao_nivel(nivel, dicionario_classificado)
+                            
                             # Timer do jogo
                             timer, texto = 15, '15'.rjust(3)
                             time.set_timer(USEREVENT, 1000)
@@ -344,14 +344,14 @@ while rodando:
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
 
-                            # Condições de nível de dificuldade
-                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
-                            
                             # Verifica se ganhou o jogo
-                            if questao_sorteada == 'Ganhou':
+                            if nivel == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
+                            else:                               
+                                # Condições de nível de dificuldade
+                                questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
                             # Timer do jogo
                             timer, texto = 15, '15'.rjust(3)
@@ -374,14 +374,14 @@ while rodando:
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
 
-                            # Condições de nível de dificuldade
-                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
-                            
                             # Verifica se ganhou o jogo
-                            if questao_sorteada == 'Ganhou':
+                            if nivel == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
+                            else:                                
+                                # Condições de nível de dificuldade
+                                questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
                             # Timer do jogo
                             timer, texto = 15, '15'.rjust(3)
@@ -404,14 +404,14 @@ while rodando:
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
 
-                            # Condições de nível de dificuldade
-                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
-                            
                             # Verifica se ganhou o jogo
-                            if questao_sorteada == 'Ganhou':
+                            if nivel == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
+                            else:
+                                # Condições de nível de dificuldade
+                                questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
                             # Timer do jogo
                             timer, texto = 15, '15'.rjust(3)

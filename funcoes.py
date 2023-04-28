@@ -34,6 +34,4 @@ def questao_nivel (nivel, dicionario_classificado):
         questao_sorteada = sorteia_questao (dicionario_classificado, 'Médio')
     elif nivel == 'Difícil':
         questao_sorteada = sorteia_questao (dicionario_classificado, 'Difícil')
-    else:
-        return 'Ganhou'
     return questao_sorteada

@@ -110,9 +110,6 @@ perguntas = [
           'correta': 'B'},
 
 
-
-
-
           # Difíceis
          {'titulo': 'Qual luas Júpiter tem?',
           'nivel': 'Difícil',
