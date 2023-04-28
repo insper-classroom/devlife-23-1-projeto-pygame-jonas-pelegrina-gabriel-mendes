@@ -6,6 +6,7 @@ from config import *
 from assets import *
 from perguntas_e_respostas import *
 from funcoes import *
+import textwrap
 
 # Inicia módulos do Pygame
 init()
@@ -137,16 +138,25 @@ while rodando:
             for botao in botoes_jogo:
                 botao.desenha(window, False)
                 
+            def quebra_alternativa(txt, largura):
+                lista = textwrap.wrap(txt, largura,break_long_words=True)
+                return '\n'.join(lista)
+
+
+            def desenha_linhas_pygame(txt, fonte, cor, x, y):
+                for linha in txt.splitlines():
+                    window.blit(fonte.render(linha, 1, cor), (x, y))
+                    y += fonte.get_height()
+
             # Cria e desenha texto das opções na tela
+            l = 13
             opcoes = questao_sorteada['opcoes']
-            opcao_a = fonte_jogo.render('A: ' + opcoes['A'], True, PRETO)
-            opcao_b = fonte_jogo.render('B: ' + opcoes['B'], True, PRETO)
-            opcao_c = fonte_jogo.render('C: ' + opcoes['C'], True, PRETO)
-            opcao_d = fonte_jogo.render('D: ' + opcoes['D'], True, PRETO)
-            window.blit (opcao_a, (WIDTH/2 - opcao_a.get_width()/2 - 200, HEIGHT/10 - opcao_a.get_height()/2 + 280))
-            window.blit (opcao_b, (WIDTH/2 - opcao_c.get_width()/4, HEIGHT/10 - opcao_c.get_height()/2 + 280))
-            window.blit (opcao_c, (WIDTH/2 - opcao_b.get_width()/2 - 200, HEIGHT/10 - opcao_b.get_height()/2 + 400))
-            window.blit (opcao_d, (WIDTH/2 - opcao_d.get_width()/2, HEIGHT/10 - opcao_d.get_height()/2 + 400))
+
+            textos = ['A: ' + opcoes['A'], 'B: ' + opcoes['B'], 'C: ' + opcoes['C'], 'D: ' + opcoes['D']]
+            posicao = [(370, 320), (620, 320), (370, 440), (620, 440)]
+            for txt in range(len(textos)):
+                linhas = quebra_alternativa(textos[txt], l)
+                desenha_linhas_pygame(linhas, fonte_jogo, PRETO, posicao[txt][0], posicao[txt][1])
             
             # Desenha o Texto/Dificuldade na tela
             nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, BRANCO)
