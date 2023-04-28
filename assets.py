@@ -22,6 +22,12 @@ retangulo_b = transform.scale(retangulo_b, (208, 120))
 retangulo_c = transform.scale(retangulo_c, (208, 120))
 retangulo_d = transform.scale(retangulo_d, (208, 120))
 
+perdeu = image.load('assets/img/perdeu.png')
+perdeu = transform.scale(perdeu, (201, 215))
+
+ganhou = image.load('assets/img/ganhou.png')
+ganhou = transform.scale(ganhou, (201, 215))
+
 # ----- Sons e efeitos sonoros
 mixer.music.load('assets/sons/fundo.mp3')
 success = mixer.Sound('assets/sons/success.mp3')

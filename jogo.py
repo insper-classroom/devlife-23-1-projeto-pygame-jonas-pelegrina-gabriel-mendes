@@ -171,9 +171,9 @@ while rodando:
 
         # Tela de fim de jogo
         elif tela_fim_de_jogo:
-            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
-            mensagem = fonte_jogo.render('Você perdeu...', True, LARANJA)
+            mensagem = fonte_jogo.render('Você perdeu!', True, PRETO)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
+            window.blit(perdeu, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
             pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
             window.blit(pontuacao_final, (WIDTH/2 - pontuacao_final.get_width()/2, HEIGHT/2 - pontuacao_final.get_height()/2 + 5))
 
@@ -213,8 +213,8 @@ while rodando:
             
         # Tela de vitória
         elif tela_venceu_jogo:
-            window.blit(logo, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
-            mensagem = fonte_jogo.render('Você ganhou!', True, LARANJA)
+            window.blit(ganhou, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
+            mensagem = fonte_jogo.render('Você ganhou!', True, PRETO)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
             pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
             window.blit(pontuacao_final, (WIDTH/2 - pontuacao_final.get_width()/2, HEIGHT/2 - pontuacao_final.get_height()/2 + 5))
