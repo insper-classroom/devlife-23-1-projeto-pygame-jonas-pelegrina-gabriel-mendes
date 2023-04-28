@@ -6,7 +6,6 @@ from config import *
 from assets import *
 from perguntas_e_respostas import *
 from funcoes import *
-import textwrap
 
 # Inicia módulos do Pygame
 init()
@@ -137,16 +136,6 @@ while rodando:
             # Desenha os botões na tela
             for botao in botoes_jogo:
                 botao.desenha(window, False)
-                
-            def quebra_alternativa(txt, largura):
-                lista = textwrap.wrap(txt, largura,break_long_words=True)
-                return '\n'.join(lista)
-
-
-            def desenha_linhas_pygame(txt, fonte, cor, x, y):
-                for linha in txt.splitlines():
-                    window.blit(fonte.render(linha, 1, cor), (x, y))
-                    y += fonte.get_height()
 
             # Cria e desenha texto das opções na tela
             l = 13
@@ -154,6 +143,7 @@ while rodando:
 
             textos = ['A: ' + opcoes['A'], 'B: ' + opcoes['B'], 'C: ' + opcoes['C'], 'D: ' + opcoes['D']]
             posicao = [(370, 320), (620, 320), (370, 440), (620, 440)]
+            
             for txt in range(len(textos)):
                 linhas = quebra_alternativa(textos[txt], l)
                 desenha_linhas_pygame(linhas, fonte_jogo, PRETO, posicao[txt][0], posicao[txt][1])

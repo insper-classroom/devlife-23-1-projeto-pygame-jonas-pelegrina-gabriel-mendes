@@ -1,5 +1,10 @@
+from pygame import *
 from random import *
 from perguntas_e_respostas import *
+from textwrap import *
+from config import *
+
+window = display.set_mode((WIDTH, HEIGHT))
 
 def classifica_nivel (perguntas):
     dicionario = {}
@@ -44,3 +49,14 @@ def timer_nivel (nivel):
     elif nivel == 'Difícil':
         timer = 10
     return timer
+
+
+def quebra_alternativa(txt, largura):
+    lista = wrap(txt, largura,break_long_words=True)
+    return '\n'.join(lista)
+
+
+def desenha_linhas_pygame(txt, fonte, cor, x, y):
+    for linha in txt.splitlines():
+        window.blit(fonte.render(linha, 1, cor), (x, y))
+        y += fonte.get_height()

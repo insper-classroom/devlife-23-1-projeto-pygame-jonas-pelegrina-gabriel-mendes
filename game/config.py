@@ -1,5 +1,4 @@
 from perguntas_e_respostas import *
-from funcoes import *
 
 
 # Dados gerais do jogo.
