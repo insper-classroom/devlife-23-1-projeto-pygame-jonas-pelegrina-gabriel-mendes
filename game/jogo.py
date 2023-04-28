@@ -39,9 +39,9 @@ while rodando:
         
 
         # Cria botões
-        botao_jogar = Botao(x, y, largura, altura)
-        botao_instrucoes = Botao(x, y + 100, largura, altura)
-        botao_sair = Botao(x, y + 200, largura, altura)
+        botao_jogar = Botao(x, y, largura, altura, ROXO)
+        botao_instrucoes = Botao(x, y + 100, largura, altura, ROXO)
+        botao_sair = Botao(x, y + 200, largura, altura, ROXO)
         botoes.append(botao_jogar)
         botoes.append(botao_instrucoes)
         botoes.append(botao_sair)
@@ -102,7 +102,7 @@ while rodando:
             y = 550
 
             # Cria e desenha botão
-            botao_voltar = Botao(x, y, largura, altura)
+            botao_voltar = Botao(x, y, largura, altura, ROXO)
             botao_voltar.desenha(window, False)
 
 
@@ -124,10 +124,10 @@ while rodando:
 
             # Cria botões
             botoes_jogo = []
-            botao_a = Botao(350, 300, 220, 100)
-            botao_b = Botao(600, 300 ,220, 100)
-            botao_c = Botao(350, 420, 220, 100)
-            botao_d = Botao(600, 420, 220, 100)
+            botao_a = Botao(350, 300, 220, 100, ROXO)
+            botao_b = Botao(600, 300 ,220, 100, ROXO)
+            botao_c = Botao(350, 420, 220, 100, ROXO)
+            botao_d = Botao(600, 420, 220, 100, ROXO)
             botoes_jogo.append(botao_a)
             botoes_jogo.append(botao_b)
             botoes_jogo.append(botao_c)
@@ -187,9 +187,9 @@ while rodando:
             
 
             # Cria botões
-            botao_jogar_novamente = Botao(x, y, largura, altura)
-            botao_menu_principal = Botao(x, y + 80, largura, altura)
-            botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura)
+            botao_jogar_novamente = Botao(x, y, largura, altura, LARANJA)
+            botao_menu_principal = Botao(x, y + 80, largura, altura, LARANJA)
+            botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura, LARANJA)
             botoes.append(botao_jogar_novamente)
             botoes.append(botao_menu_principal)
             botoes.append(botao_sair)
@@ -229,9 +229,9 @@ while rodando:
             
 
             # Cria botões
-            botao_jogar_novamente = Botao(x, y, largura, altura)
-            botao_menu_principal = Botao(x, y + 80, largura, altura)
-            botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura)
+            botao_jogar_novamente = Botao(x, y, largura, altura, ROXO)
+            botao_menu_principal = Botao(x, y + 80, largura, altura, ROXO)
+            botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura, ROXO)
             botoes.append(botao_jogar_novamente)
             botoes.append(botao_menu_principal)
             botoes.append(botao_sair)
