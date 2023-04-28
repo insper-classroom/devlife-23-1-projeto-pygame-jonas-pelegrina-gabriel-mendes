@@ -15,3 +15,25 @@ def classifica_nivel (perguntas):
 def sorteia_questao (dicionario, nivel):
     questao = choice(dicionario[nivel])
     return questao
+
+def define_nivel (pontuacao):
+    if pontuacao < 5:
+        nivel = 'Fácil'
+    elif 5 <= pontuacao < 10:
+        nivel = 'Médio'
+    elif pontuacao == 10:
+        nivel = 'Difícil'
+    else:
+        nivel = 'Ganhou'
+    return nivel
+
+def questao_nivel (nivel, dicionario_classificado):
+    if nivel == 'Fácil':
+        questao_sorteada = sorteia_questao (dicionario_classificado, 'Fácil')
+    elif nivel == 'Médio':
+        questao_sorteada = sorteia_questao (dicionario_classificado, 'Médio')
+    elif nivel == 'Difícil':
+        questao_sorteada = sorteia_questao (dicionario_classificado, 'Difícil')
+    else:
+        return 'Ganhou'
+    return questao_sorteada

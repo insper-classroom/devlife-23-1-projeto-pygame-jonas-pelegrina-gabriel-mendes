@@ -166,7 +166,7 @@ while rodando:
             nivel = questao_sorteada['nivel']
 
             # Índice da questão atual no banco de questão
-            indice = (dicionario_classificado[nivel].index (questao_sorteada))
+            indice = (dicionario_classificado[nivel].index(questao_sorteada))
         
 
         # Tela de fim de jogo
@@ -311,14 +311,14 @@ while rodando:
                             # Retira questão do dicionário
                             del (dicionario_classificado[nivel][indice])
 
+                            # Nível de dificuldade atual
+                            nivel = define_nivel(pontuacao)
+
                             # Condições de nível de dificuldade
-                            if pontuacao < 5:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
-                            elif 5 <= pontuacao < 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
-                            elif pontuacao == 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
-                            else:
+                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
+                            
+                            # Verifica se ganhou o jogo
+                            if questao_sorteada == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
@@ -341,14 +341,14 @@ while rodando:
                             # Retira questão do dicionário
                             del (dicionario_classificado[nivel][indice])
 
+                            # Nível de dificuldade atual
+                            nivel = define_nivel(pontuacao)
+
                             # Condições de nível de dificuldade
-                            if pontuacao < 5:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
-                            elif 5 <= pontuacao < 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
-                            elif pontuacao == 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
-                            else:
+                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
+                            
+                            # Verifica se ganhou o jogo
+                            if questao_sorteada == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
@@ -371,14 +371,14 @@ while rodando:
                             # Retira questão do dicionário
                             del (dicionario_classificado[nivel][indice])
 
+                            # Nível de dificuldade atual
+                            nivel = define_nivel(pontuacao)
+
                             # Condições de nível de dificuldade
-                            if pontuacao < 5:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
-                            elif 5 <= pontuacao < 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
-                            elif pontuacao == 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
-                            else:
+                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
+                            
+                            # Verifica se ganhou o jogo
+                            if questao_sorteada == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True
@@ -401,14 +401,14 @@ while rodando:
                             # Retira questão do dicionário
                             del (dicionario_classificado[nivel][indice])
 
+                            # Nível de dificuldade atual
+                            nivel = define_nivel(pontuacao)
+
                             # Condições de nível de dificuldade
-                            if pontuacao < 5:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
-                            elif 5 <= pontuacao < 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Médio')
-                            elif pontuacao == 10:
-                                questao_sorteada = sorteia_questao(dicionario_classificado, 'Difícil')
-                            else:
+                            questao_sorteada = questao_nivel(nivel, dicionario_classificado)
+                            
+                            # Verifica se ganhou o jogo
+                            if questao_sorteada == 'Ganhou':
                                 mixer.music.pause()
                                 inicio_jogo = False
                                 tela_venceu_jogo = True

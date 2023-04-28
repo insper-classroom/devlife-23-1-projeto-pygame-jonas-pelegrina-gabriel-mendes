@@ -53,10 +53,6 @@ perguntas = [
           'nivel': 'Fácil',
           'opcoes': {'A': 'Tucano', 'B': 'Arara', 'C': 'Onça-pintada', 'D': 'Papagaio'},
           'correta': 'C'},
-          {'titulo': 'Quantos elementos químicos existem na Tabela Periódica?',
-          'nivel': 'Fácil',
-          'opcoes': {'A': '116', 'B': '118', 'C': '120', 'D': '122'},
-          'correta': 'B'},
           {'titulo': 'Qual é o nome do famoso cachorro criado por Mauricio de Sousa?',
           'nivel': 'Fácil',
           'opcoes': {'A': 'Lassie', 'B': 'Scooby-Doo', 'C': 'Bidu', 'D': 'Rin Tin Tin'},
@@ -100,16 +96,18 @@ perguntas = [
           'nivel': 'Médio',
           'opcoes': {'A': 'Elefante africano', 'B': 'Rinoceronte branco', 'C': 'Hipopótamo', 'D': 'Girafa'},
           'correta': 'D'},
-
           {'titulo': 'Em que país está localizada a cidade de Petra?',
           'nivel': 'Médio',
           'opcoes': {'A': 'Egito', 'B': 'Jordânia', 'C': 'Líbano', 'D': 'Síria'},
           'correta': 'B'},
-
           {'titulo': 'Qual é o nome do maior deserto do mundo?',
           'nivel': 'Médio',
           'opcoes': {'A': 'Saara', 'B': 'Gobi', 'C': 'Atacama', 'D': 'Antártica'},
           'correta': 'A'},
+          {'titulo': 'Quantos elementos químicos existem na Tabela Periódica?',
+          'nivel': 'Médio',
+          'opcoes': {'A': '116', 'B': '118', 'C': '120', 'D': '122'},
+          'correta': 'B'},
 
 
 
