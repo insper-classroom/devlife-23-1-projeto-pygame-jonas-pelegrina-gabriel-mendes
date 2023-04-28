@@ -270,7 +270,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
 
                         # Timer do jogo
-                        timer, texto = 15, '15'.rjust(3)
+                        timer, texto = 30, '30'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
 
 
@@ -322,10 +322,12 @@ while rodando:
                             else:
                                 # Condições de nível de dificuldade
                                 questao_sorteada = questao_nivel(nivel, dicionario_classificado)
-                            
-                            # Timer do jogo
-                            timer, texto = 15, '15'.rjust(3)
-                            time.set_timer(USEREVENT, 1000)
+                                
+                                # Timer do jogo
+                                timer_texto = str(timer_nivel(nivel))
+                                timer, texto = timer_nivel(nivel), timer_texto.rjust(3)
+                                time.set_timer(USEREVENT, 1000)
+
                         else:
                             inicio_jogo = False
                             tela_fim_de_jogo = True
@@ -353,9 +355,11 @@ while rodando:
                                 # Condições de nível de dificuldade
                                 questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
-                            # Timer do jogo
-                            timer, texto = 15, '15'.rjust(3)
-                            time.set_timer(USEREVENT, 1000)
+                                # Timer do jogo
+                                timer_texto = str(timer_nivel(nivel))
+                                timer, texto = timer_nivel(nivel), timer_texto.rjust(3)
+                                time.set_timer(USEREVENT, 1000)
+
                         else:
                             inicio_jogo = False
                             tela_fim_de_jogo = True
@@ -383,9 +387,11 @@ while rodando:
                                 # Condições de nível de dificuldade
                                 questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
-                            # Timer do jogo
-                            timer, texto = 15, '15'.rjust(3)
-                            time.set_timer(USEREVENT, 1000)
+                                # Timer do jogo
+                                timer_texto = str(timer_nivel(nivel))
+                                timer, texto = timer_nivel(nivel), timer_texto.rjust(3)
+                                time.set_timer(USEREVENT, 1000)
+
                         else:
                             inicio_jogo = False
                             tela_fim_de_jogo = True
@@ -413,9 +419,11 @@ while rodando:
                                 # Condições de nível de dificuldade
                                 questao_sorteada = questao_nivel(nivel, dicionario_classificado)
 
-                            # Timer do jogo
-                            timer, texto = 15, '15'.rjust(3)
-                            time.set_timer(USEREVENT, 1000)
+                                # Timer do jogo
+                                timer_texto = str(timer_nivel(nivel))
+                                timer, texto = timer_nivel(nivel), timer_texto.rjust(3)
+                                time.set_timer(USEREVENT, 1000)
+                                
                         else:
                             inicio_jogo = False
                             tela_fim_de_jogo = True
@@ -435,7 +443,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                         # Timer do jogo
-                        timer, texto = 15, '15'.rjust(3)
+                        timer, texto = 30, '30'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
                     
                     elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):
@@ -460,7 +468,7 @@ while rodando:
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
                         # Timer do jogo
-                        timer, texto = 15, '15'.rjust(3)
+                        timer, texto = 30, '30'.rjust(3)
                         time.set_timer(USEREVENT, 1000)
                     
                     elif botao_menu_principal.verifica_clique(evento.pos[0], evento.pos[1]):

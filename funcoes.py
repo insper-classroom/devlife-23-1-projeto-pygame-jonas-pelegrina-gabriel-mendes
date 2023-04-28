@@ -35,3 +35,12 @@ def questao_nivel (nivel, dicionario_classificado):
     elif nivel == 'Difícil':
         questao_sorteada = sorteia_questao (dicionario_classificado, 'Difícil')
     return questao_sorteada
+
+def timer_nivel (nivel):
+    if nivel == 'Fácil':
+        timer = 30
+    elif nivel == 'Médio':
+        timer = 20
+    elif nivel == 'Difícil':
+        timer = 10
+    return timer
