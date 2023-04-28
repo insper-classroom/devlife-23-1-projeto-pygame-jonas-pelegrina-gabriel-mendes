@@ -101,7 +101,19 @@ body{
     border-radius: 50px;
     border: 5px solid #D387F4;
     flex-grow: 1;
+}
 
+.organic_roxo2{  
+    display: grid;
+    background-color: #D387F4;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0em;
+    padding: 4em;
+    border-radius: 50px;
+    border: 5px solid #D387F4;
+    flex-grow: 1;
 }
 
 .teste{
@@ -125,6 +137,23 @@ body{
 .botao:hover{
     background-color: #EE8A6F;
     border: 0em solid #EE8A6F;
+}
+
+.botao2{
+    background-color: #19241F;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    font-family: 'SpaceMono';
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 15px;
+    border: 0em solid #19241F;
+}
+
+.botao2:hover{
+    background-color: #D387F4;
+    border: 0em solid #D387F4;
 }
 
 footer{
@@ -182,9 +211,9 @@ h2{
 }
 
 .agradecimentos{
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
 
 .mensagem_devs{
-    margin-top: 2em;
+    margin-top: 1.5em;
 }
