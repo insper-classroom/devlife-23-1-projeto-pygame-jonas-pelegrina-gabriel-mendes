@@ -28,7 +28,9 @@ perdeu = transform.scale(perdeu, (201, 215))
 ganhou = image.load('assets/img/ganhou.png')
 ganhou = transform.scale(ganhou, (201, 215))
 
+
 # ----- Sons e efeitos sonoros
 mixer.music.load('assets/sons/fundo.mp3')
 success = mixer.Sound('assets/sons/success.mp3')
 fail = mixer.Sound('assets/sons/fail.mp3')
+win = mixer.Sound('assets/sons/win.mp3')

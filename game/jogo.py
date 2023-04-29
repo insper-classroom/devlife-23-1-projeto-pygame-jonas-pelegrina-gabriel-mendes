@@ -213,6 +213,7 @@ while rodando:
             
         # Tela de vitória
         elif tela_venceu_jogo:
+            win.play()
             window.blit(ganhou, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
             mensagem = fonte_jogo.render('Você ganhou!', True, PRETO)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
