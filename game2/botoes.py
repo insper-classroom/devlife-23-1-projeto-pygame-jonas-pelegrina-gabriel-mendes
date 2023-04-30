@@ -1,7 +1,6 @@
 from pygame import *
 from config import *
 
-
 class Botao:
     def __init__(self, x, y, largura, altura, cor):
         self.x = x

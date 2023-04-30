@@ -1,7 +1,11 @@
 # ===== Inicialização =====
 # Importa pacotes
 from pygame import *
-from telas.tela_de_inicio import TelaDeInicio
+from telas.tela_de_inicio import *
+from telas.tela_de_instrucoes import *
+
+from telas.tela_venceu_jogo import *
+from telas.tela_fim_de_jogo import *
 from config import *
 from assets import *
 
@@ -12,8 +16,8 @@ class Jogo:
         init()
 
         # ----- Gera tela principal
-        window = display.set_mode((WIDTH, HEIGHT))
-        clock = time.Clock()
+        self.window = display.set_mode((WIDTH, HEIGHT))
+        self.clock = time.Clock()
         display.set_caption('Quiz Hero')
 
         # Símbolo do Pygame
@@ -31,6 +35,9 @@ class Jogo:
             if tela_atual == 'sair':
                 rodando = False
                 quit()
+            else:
+                tela_atual.desenha(self.window)
+                self.clock.tick(FPS)
 
 
 
