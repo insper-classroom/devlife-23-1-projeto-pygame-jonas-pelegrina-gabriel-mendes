@@ -9,9 +9,10 @@ from funcoes import *
 class TelaJogo:
     def __init__(self, perguntas):
 
-        
+
         self.dicionario_classificado = classifica_nivel(perguntas)
         self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
+
 
         # Cria título na tela
         self.titulo = fonte_jogo.render(self.questao_sorteada['titulo'], True, (0, 0, 0))
