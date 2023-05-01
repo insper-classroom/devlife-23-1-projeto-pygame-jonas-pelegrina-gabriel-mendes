@@ -1,9 +1,8 @@
 from pygame import *
 from random import *
 from textwrap import *
-from config import *
 
-window = display.set_mode((WIDTH, HEIGHT))
+window = display.set_mode((1280, 720))
 
 def classifica_nivel (perguntas):
     dicionario = {}

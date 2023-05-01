@@ -6,7 +6,6 @@ from tela_de_instrucoes import *
 from tela_de_jogo import *
 from tela_venceu_jogo import *
 from tela_fim_de_jogo import *
-from config import *
 from perguntas_e_respostas import *
 
 # Classe que representa o jogo como um todo
@@ -40,7 +39,7 @@ class Jogo:
 
             # Verifica se o jogador quer ir para a tela de jogo
             elif tela_atual == 'jogar':
-                tela_atual = TelaJogo()
+                tela_atual = TelaJogo(perguntas)
 
             # Verifica se o jogador quer voltar para a tela inicia;
             elif tela_atual == 'menu':
@@ -50,10 +49,18 @@ class Jogo:
             elif tela_atual == 'instrucoes':
                 tela_atual = TelaDeInstrucoes()
 
+            elif tela_atual == 'venceu':
+                tela_atual = TelaVenceuJogo()
+            
+            elif tela_atual == 'game_over':
+                tela_atual = TelaFimDeJogo()
+
             else:
                 tela_atual.desenha(self.window)
                 self.clock.tick(60)
-            
+
+                # Atualiza a tela
+                display.update()
 
 
 

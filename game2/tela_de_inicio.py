@@ -13,43 +13,44 @@ class TelaDeInicio:
         self.logo = transform.scale(simbolo, (201, 215))
 
         # Carrega fonte
-        fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
         
         # Cria dimensões dos botões
         self.botoes = []
         largura = 120
         altura = 60
-        x = WIDTH/2 - largura/2
+        x = 1280/2 - largura/2
         y = 350
         
         # Cria botões
-        self.botao_jogar = Botao(x, y, largura, altura, ROXO)
-        self.botao_instrucoes = Botao(x, y + 100, largura, altura, ROXO)
-        self.botao_sair = Botao(x, y + 200, largura, altura, ROXO)
+        self.botao_jogar = Botao(x, y, largura, altura, (211, 135, 244))
+        self.botao_instrucoes = Botao(x, y + 100, largura, altura, (211, 135, 244))
+        self.botao_sair = Botao(x, y + 200, largura, altura, (211, 135, 244))
         self.botoes.append(self.botao_jogar)
         self.botoes.append(self.botao_instrucoes)
         self.botoes.append(self.botao_sair)
 
         # Cria texto dos botões
-        self.jogar = fonte_jogo.render('Jogar', True, (0, 0, 0))
-        self.instrucoes = fonte_jogo.render('Instruções', True, (0, 0, 0))
-        self.sair = fonte_jogo.render('Sair', True, (0, 0, 0))
+        self.jogar = self.fonte_jogo.render('Jogar', True, (0, 0, 0))
+        self.instrucoes = self.fonte_jogo.render('Instruções', True, (0, 0, 0))
+        self.sair = self.fonte_jogo.render('Sair', True, (0, 0, 0))
 
     def desenha(self, window):
+        
         # Desenha fundo
         window.fill((230,226,216))
 
         # Desenha logo
-        window.blit(self.logo, (WIDTH/2 - self.logo.get_width()/2, HEIGHT/2 - self.logo.get_height()/2 - 180))
+        window.blit(self.logo, (1280/2 - self.logo.get_width()/2, 720/2 - self.logo.get_height()/2 - 180))
 
         # Desenha botões
         for botao in self.botoes:
             botao.desenha(window, False)
         
         # Desenha textos do botões
-        window.blit(self.jogar, (WIDTH/2 - self.jogar.get_width()/2, HEIGHT/2 - self.jogar.get_height()/2 + 20))
-        window.blit(self.instrucoes, (WIDTH/2 - self.instrucoes.get_width()/2, HEIGHT/2 - self.instrucoes.get_height()/2 + 120))
-        window.blit(self.sair, (WIDTH/2 - self.sair.get_width()/2, HEIGHT/2 - self.sair.get_height()/2 + 220))
+        window.blit(self.jogar, (1280/2 - self.jogar.get_width()/2, 720/2 - self.jogar.get_height()/2 + 20))
+        window.blit(self.instrucoes, (1280/2 - self.instrucoes.get_width()/2, 720/2 - self.instrucoes.get_height()/2 + 120))
+        window.blit(self.sair, (1280/2 - self.sair.get_width()/2, 720/2 - self.sair.get_height()/2 + 220))
 
         # Atualiza a tela
         display.update()

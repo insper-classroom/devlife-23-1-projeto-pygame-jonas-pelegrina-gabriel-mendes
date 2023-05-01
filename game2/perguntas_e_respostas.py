@@ -1,4 +1,5 @@
 # Perguntas geradas utilizando ChatGPT
+
 perguntas = [
           # Fáceis
          {'titulo': 'Qual é a capital do Brasil?',

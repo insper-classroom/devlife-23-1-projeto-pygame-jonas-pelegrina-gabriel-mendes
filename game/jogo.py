@@ -173,7 +173,7 @@ while rodando:
         elif tela_fim_de_jogo:
             mensagem = fonte_jogo.render('Você perdeu o jogo!', True, LARANJA)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
-            window.blit(perdeu, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
+            window.blit(perdeu, (WIDTH/2 - perdeu.get_width()/2, HEIGHT/2 - perdeu.get_height()/2 - 180))
             pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
             window.blit(pontuacao_final, (WIDTH/2 - pontuacao_final.get_width()/2, HEIGHT/2 - pontuacao_final.get_height()/2 + 5))
 
@@ -213,7 +213,7 @@ while rodando:
             
         # Tela de vitória
         elif tela_venceu_jogo:
-            window.blit(ganhou, (WIDTH/2 - logo.get_width()/2, HEIGHT/2 - logo.get_height()/2 - 180))
+            window.blit(ganhou, (WIDTH/2 - ganhou.get_width()/2, HEIGHT/2 - ganhou.get_height()/2 - 180))
             mensagem = fonte_jogo.render('Parabéns, você venceu o jogo!', True, LARANJA)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
             pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)

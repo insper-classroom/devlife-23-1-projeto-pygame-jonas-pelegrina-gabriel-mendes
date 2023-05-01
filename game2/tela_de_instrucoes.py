@@ -8,25 +8,25 @@ class TelaDeInstrucoes:
     def __init__(self):
 
         # Carrega fonte
-        fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria regras
-        self.instrucoes = fonte_jogo.render('Instruções', True, (238, 138, 111))
-        self.instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
-        self.regras = fonte_jogo.render('Assim que o jogo for iniciado surgirá uma tela', True, (0, 0, 0))
-        self.regras1 = fonte_jogo.render('com uma pergunta e quatro opções de resposta.', True, (0, 0, 0))
-        self.regras2 = fonte_jogo.render('O jogador deverá escolher a resposta correta', True, (0, 0, 0))
-        self.regras3 = fonte_jogo.render('antes do tempo acabar, caso contrário o jogador', True, (0, 0, 0))
-        self.regras4 = fonte_jogo.render('perderá e o jogo será finalizado.', True, (0, 0, 0))
-        self.regras5 = fonte_jogo.render('Caso o jogador responda corretamente, ele poderá', True, (0, 0, 0))
-        self.regras6 = fonte_jogo.render('continuar com as perguntas e a pontuação do jogo', True, (0, 0, 0))
-        self.regras7 = fonte_jogo.render('será aumentada.', True, (0, 0, 0))
-        self.regras8 = fonte_jogo.render('Ao progredir no jogo, o nível das questões irá', True, (0, 0, 0))
-        self.regras9 = fonte_jogo.render('aumentar, fazendo com que as perguntas fiquem', True, (0, 0, 0))
-        self.regras10 = fonte_jogo.render('mais difíceis e o tempo de resposta diminua.', True, (0, 0, 0))
-        self.regras11 = fonte_jogo.render('Para ganhar o jogo, o jogador precisa responder', True, (0, 0, 0))
-        self.regras12 = fonte_jogo.render('todas as perguntas corretamente sem errar nenhuma.', True, (0, 0, 0))
-        self.regras13 = fonte_jogo.render('Boa sorte!', True, (0, 0, 0))
+        self.instrucoes = self.fonte_jogo.render('Instruções', True, (238, 138, 111))
+        self.instrucoes_detalhe = self.fonte_jogo.render('----------', True, (0, 0, 0))
+        self.regras = self.fonte_jogo.render('Assim que o jogo for iniciado surgirá uma tela', True, (0, 0, 0))
+        self.regras1 = self.fonte_jogo.render('com uma pergunta e quatro opções de resposta.', True, (0, 0, 0))
+        self.regras2 = self.fonte_jogo.render('O jogador deverá escolher a resposta correta', True, (0, 0, 0))
+        self.regras3 = self.fonte_jogo.render('antes do tempo acabar, caso contrário o jogador', True, (0, 0, 0))
+        self.regras4 = self.fonte_jogo.render('perderá e o jogo será finalizado.', True, (0, 0, 0))
+        self.regras5 = self.fonte_jogo.render('Caso o jogador responda corretamente, ele poderá', True, (0, 0, 0))
+        self.regras6 = self.fonte_jogo.render('continuar com as perguntas e a pontuação do jogo', True, (0, 0, 0))
+        self.regras7 = self.fonte_jogo.render('será aumentada.', True, (0, 0, 0))
+        self.regras8 = self.fonte_jogo.render('Ao progredir no jogo, o nível das questões irá', True, (0, 0, 0))
+        self.regras9 = self.fonte_jogo.render('aumentar, fazendo com que as perguntas fiquem', True, (0, 0, 0))
+        self.regras10 = self.fonte_jogo.render('mais difíceis e o tempo de resposta diminua.', True, (0, 0, 0))
+        self.regras11 = self.fonte_jogo.render('Para ganhar o jogo, o jogador precisa responder', True, (0, 0, 0))
+        self.regras12 = self.fonte_jogo.render('todas as perguntas corretamente sem errar nenhuma.', True, (0, 0, 0))
+        self.regras13 = self.fonte_jogo.render('Boa sorte!', True, (0, 0, 0))
 
         # Cria dimensão do botão
         largura = 120
@@ -38,10 +38,11 @@ class TelaDeInstrucoes:
         self.botao_voltar = Botao(x, y, largura, altura, (211, 135, 244))
 
         # Cria texto do botão
-        self.voltar = fonte_jogo.render('Voltar', True, (0, 0, 0))
+        self.voltar = self.fonte_jogo.render('Voltar', True, (0, 0, 0))
 
 
     def desenha(self, window):
+            
         # Desenha fundo
         window.fill((230, 226, 216))
 
@@ -77,7 +78,7 @@ class TelaDeInstrucoes:
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'
-            elif evento.type == MOUSEBUTTONUP:
+            if evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if self.botao_voltar.verifica_clique(evento.pos[0], evento.pos[1]):
                         return 'menu'
