@@ -49,9 +49,11 @@ class Jogo:
             elif tela_atual == 'instrucoes':
                 tela_atual = TelaDeInstrucoes()
 
+            # Verifica se o jogador ganhou o jogo
             elif tela_atual == 'venceu':
                 tela_atual = TelaVenceuJogo()
             
+            # Verifica se o jogador perdeu o jogo
             elif tela_atual == 'game_over':
                 tela_atual = TelaFimDeJogo()
 
