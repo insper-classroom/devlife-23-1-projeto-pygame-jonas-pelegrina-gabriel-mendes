@@ -9,11 +9,11 @@ class TelaDeInicio:
     def __init__(self):
         
         # Carrega logo
-        simbolo = image.load('game2/assets/icon/logo.png')
+        simbolo = image.load('assets/icon/logo.png')
         self.logo = transform.scale(simbolo, (201, 215))
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
         
         # Cria dimensões dos botões
         self.botoes = []

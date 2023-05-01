@@ -8,7 +8,7 @@ class TelaDeInstrucoes:
     def __init__(self):
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria regras
         self.instrucoes = self.fonte_jogo.render('Instruções', True, (238, 138, 111))

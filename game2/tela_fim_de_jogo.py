@@ -9,11 +9,11 @@ class TelaFimDeJogo:
     def __init__(self):
 
         # Carrega logo de derrota
-        perdeu = image.load('game/assets/img/perdeu.png')
+        perdeu = image.load('assets/img/perdeu.png')
         self.perdeu = transform.scale(perdeu, (201, 215))
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria mensagem de fim de jogo
         self.mensagem = fonte_jogo.render('Você perdeu o jogo!', True, (238, 138, 111))
