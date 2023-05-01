@@ -43,8 +43,8 @@ class TelaDeInicio:
         window.blit(self.logo, (WIDTH/2 - self.logo.get_width()/2, HEIGHT/2 - self.logo.get_height()/2 - 180))
 
         # Desenha botões
-        for self.botao in self.botoes:
-            self.botao.desenha(window, False)
+        for botao in self.botoes:
+            botao.desenha(window, False)
         
         # Desenha textos do botões
         window.blit(self.jogar, (WIDTH/2 - self.jogar.get_width()/2, HEIGHT/2 - self.jogar.get_height()/2 + 20))

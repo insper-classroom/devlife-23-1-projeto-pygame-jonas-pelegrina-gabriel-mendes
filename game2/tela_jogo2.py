@@ -4,14 +4,14 @@ from pygame import *
 from botoes import *
 
 # Classe da tela de instruções
-class TelaDeInstrucoes:
+class TelaJogo:
     def __init__(self):
 
         # Carrega fonte
         fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria regras
-        self.instrucoes = fonte_jogo.render('Instruções', True, (238, 138, 111))
+        self.instrucoes = fonte_jogo.render('Instruções', True, LARANJA)
         self.instrucoes_detalhe = fonte_jogo.render('----------', True, (0, 0, 0))
         self.regras = fonte_jogo.render('Assim que o jogo for iniciado surgirá uma tela', True, (0, 0, 0))
         self.regras1 = fonte_jogo.render('com uma pergunta e quatro opções de resposta.', True, (0, 0, 0))
@@ -35,7 +35,7 @@ class TelaDeInstrucoes:
         y = 550
 
         # Cria botão de voltar
-        self.botao_voltar = Botao(x, y, largura, altura, (211, 135, 244))
+        self.botao_voltar = Botao(x, y, largura, altura, ROXO)
 
         # Cria texto do botão
         self.voltar = fonte_jogo.render('Voltar', True, (0, 0, 0))

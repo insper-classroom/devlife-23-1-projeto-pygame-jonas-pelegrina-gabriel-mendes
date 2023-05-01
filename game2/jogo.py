@@ -40,7 +40,7 @@ class Jogo:
 
             # Verifica se o jogador quer ir para a tela de jogo
             elif tela_atual == 'jogar':
-                tela_atual = TelaJogo(perguntas)
+                tela_atual = TelaJogo()
 
             # Verifica se o jogador quer voltar para a tela inicia;
             elif tela_atual == 'menu':
