@@ -171,7 +171,7 @@ while rodando:
 
         # Tela de fim de jogo
         elif tela_fim_de_jogo:
-            mensagem = fonte_jogo.render('Você perdeu o jogo!', True, LARANJA)
+            mensagem = fonte_jogo.render('Você perdeu o jogo!', True, PRETO)
             window.blit(mensagem, (WIDTH/2 - mensagem.get_width()/2, HEIGHT/2 - mensagem.get_height()/2 - 40))
             window.blit(perdeu, (WIDTH/2 - perdeu.get_width()/2, HEIGHT/2 - perdeu.get_height()/2 - 180))
             pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(pontuacao), True, LARANJA)
