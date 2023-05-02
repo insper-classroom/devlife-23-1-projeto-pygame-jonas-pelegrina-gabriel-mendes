@@ -149,7 +149,7 @@ while rodando:
                 desenha_linhas_pygame(linhas, fonte_jogo, PRETO, posicao[txt][0], posicao[txt][1])
             
             # Desenha o Texto/Dificuldade na tela
-            nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, BRANCO)
+            nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, VERDE)
             window.blit (nivel_atual, (WIDTH/2 - nivel_atual.get_width()/2 + 400, HEIGHT/5 - nivel_atual.get_height()/2))
 
             # Pontuação	do jogador
@@ -262,7 +262,7 @@ while rodando:
             if evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if botao_jogar.verifica_clique(evento.pos[0], evento.pos[1]):
-                        mixer.music.play()
+                        mixer.music.play(loops= -1)
                         tela_de_inicio = False
                         inicio_jogo = True
                         pontuacao = 0
@@ -439,7 +439,7 @@ while rodando:
             if evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if botao_jogar_novamente.verifica_clique(evento.pos[0], evento.pos[1]):
-                        mixer.music.play()
+                        mixer.music.play(loops= -1)
                         tela_fim_de_jogo = False
                         inicio_jogo = True
                         pontuacao = 0
@@ -464,7 +464,7 @@ while rodando:
             if evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if botao_jogar_novamente.verifica_clique(evento.pos[0], evento.pos[1]):
-                        mixer.music.play()
+                        mixer.music.play(loops= -1)
                         tela_fim_de_jogo = False
                         inicio_jogo = True
                         pontuacao = 0

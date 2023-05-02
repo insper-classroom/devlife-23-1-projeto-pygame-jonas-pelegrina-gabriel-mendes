@@ -12,6 +12,7 @@ ROXO = (211, 135, 244)
 PRETO = (0, 0, 0)
 BRANCO = (255, 255, 255)
 BEGE_FUNDO = (230, 226, 216)
+VERDE = (25,36,31)
 
 # Variáveis
 tela_de_inicio = True
