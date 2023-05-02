@@ -1,7 +1,7 @@
 # ===== Inicialização =====
 # Importa pacotes
 from pygame import *
-from classes_e_objetos import *
+from classe_botao import *
 from config import *
 from assets import *
 from perguntas_e_respostas import *
@@ -150,7 +150,7 @@ while rodando:
                 desenha_linhas_pygame(linhas, fonte_jogo, PRETO, posicao[txt][0], posicao[txt][1])
             
             # Desenha o Texto/Dificuldade na tela
-            nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, VERDE)
+            nivel_atual = fonte_jogo.render(questao_sorteada['nivel'], True, cor_nivel)
             window.blit (nivel_atual, (WIDTH/2 - nivel_atual.get_width()/2 + 400, HEIGHT/5 - nivel_atual.get_height()/2))
 
             # Pontuação	do jogador
@@ -267,6 +267,7 @@ while rodando:
                         tela_de_inicio = False
                         inicio_jogo = True
                         pontuacao = 0
+                        cor_nivel = VERDE
                         dicionario_classificado = classifica_nivel(perguntas)
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
 
@@ -314,6 +315,9 @@ while rodando:
 
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
+
+                            # Cor do nível de dificuldade atual
+                            cor_nivel = define_cor_nivel(nivel)
                             
                             # Verifica se ganhou o jogo
                             if nivel == 'Ganhou':
@@ -348,6 +352,9 @@ while rodando:
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
 
+                            # Cor do nível de dificuldade atual
+                            cor_nivel = define_cor_nivel(nivel)
+
                             # Verifica se ganhou o jogo
                             if nivel == 'Ganhou':
                                 mixer.music.pause()
@@ -380,6 +387,9 @@ while rodando:
 
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
+
+                            # Cor do nível de dificuldade atual
+                            cor_nivel = define_cor_nivel(nivel)
 
                             # Verifica se ganhou o jogo
                             if nivel == 'Ganhou':
@@ -414,6 +424,9 @@ while rodando:
                             # Nível de dificuldade atual
                             nivel = define_nivel(pontuacao)
 
+                            # Cor do nível de dificuldade atual
+                            cor_nivel = define_cor_nivel(nivel)
+
                             # Verifica se ganhou o jogo
                             if nivel == 'Ganhou':
                                 mixer.music.pause()
@@ -444,6 +457,7 @@ while rodando:
                         tela_fim_de_jogo = False
                         inicio_jogo = True
                         pontuacao = 0
+                        cor_nivel = VERDE
                         dicionario_classificado = classifica_nivel(perguntas)
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 
@@ -469,6 +483,7 @@ while rodando:
                         tela_fim_de_jogo = False
                         inicio_jogo = True
                         pontuacao = 0
+                        cor_nivel = VERDE
                         dicionario_classificado = classifica_nivel(perguntas)
                         questao_sorteada = sorteia_questao(dicionario_classificado, 'Fácil')
                 

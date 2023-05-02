@@ -12,7 +12,9 @@ ROXO = (211, 135, 244)
 PRETO = (0, 0, 0)
 BRANCO = (255, 255, 255)
 BEGE_FUNDO = (230, 226, 216)
-VERDE = (25,36,31)
+VERDE = (0, 255, 0)
+AMARELO = (255, 255, 0)
+VERMELHO = (255, 0, 0)
 
 # Variáveis
 tela_de_inicio = True
@@ -21,3 +23,4 @@ tela_fim_de_jogo = False
 tela_venceu_jogo = False
 inicio_jogo = False
 pontuacao = 0
+cor_nivel = 0
