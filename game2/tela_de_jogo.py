@@ -8,6 +8,8 @@ from funcoes import *
 class TelaJogo:
     def __init__(self, perguntas):
 
+        self.window = display.set_mode((1280, 720))
+
         # Carrega fonte
         self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
 
@@ -94,7 +96,7 @@ class TelaJogo:
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'
-            if evento.type == MOUSEBUTTONUP:
+            elif evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
                     if self.botao_a.verifica_clique(evento.pos[0], evento.pos[1]):
                         if self.resposta == "A":
@@ -107,9 +109,9 @@ class TelaJogo:
 
                             # Sorteia nova questão
                             self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            display.update()
+                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
 
-                            return 'venceu'
+                            
 
                         else:
                             self.fail.play()
@@ -127,9 +129,9 @@ class TelaJogo:
 
                             # Sorteia nova questão
                             self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            display.update()
+                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
                             
-                            return 'venceu'
+                    
 
                         else:
                             self.fail.play()
@@ -147,9 +149,9 @@ class TelaJogo:
 
                             # Sorteia nova questão
                             self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            display.update()
+                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
 
-                            return 'venceu'
+                      
 
                         else:
                             self.fail.play()
@@ -167,9 +169,8 @@ class TelaJogo:
 
                             # Sorteia nova questão
                             self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            display.update()
+                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
 
-                            return 'venceu'
 
                         else:
                             self.fail.play()
