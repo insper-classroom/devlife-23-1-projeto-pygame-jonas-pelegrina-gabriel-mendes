@@ -158,11 +158,11 @@ body{
 
 footer{
     background-color: #19241F;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #fff;
     font-family: 'SpaceMono';
     margin: 0;
-    padding: 1.5em;
+    padding: 1em;
 }
 
 h1{
@@ -216,4 +216,7 @@ h2{
 
 .mensagem_devs{
     margin-top: 1.5em;
+}
+p{
+    text-align: center;
 }
