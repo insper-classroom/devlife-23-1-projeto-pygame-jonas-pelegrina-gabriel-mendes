@@ -8,25 +8,23 @@ from funcoes import *
 class TelaJogo:
     def __init__(self, perguntas):
 
-        self.window = display.set_mode((1280, 720))
+        # Timer do jogo
+        self.timer, self.texto = 30, '30'.rjust(3)
+        time.set_timer(USEREVENT, 1000)
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Sons e efeitos sonoros
-        self.success = mixer.Sound('game2/assets/sons/success.mp3')
-        self.fail = mixer.Sound('game2/assets/sons/fail.mp3')
-        self.win = mixer.Sound('game2/assets/sons/win.mp3')
+        self.success = mixer.Sound('assets/sons/success.mp3')
+        self.fail = mixer.Sound('assets/sons/fail.mp3')
+        self.win = mixer.Sound('assets/sons/win.mp3')
         
         # Carrega perguntas
         self.dicionario_classificado = classifica_nivel(perguntas)
-        self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
 
         # Inicia a pontuação
         self.pontuacao = 0
-
-        # Cria título da questão
-        self.titulo = self.fonte_jogo.render(self.questao_sorteada['titulo'], True, (0, 0, 0))
 
         # Cria botões de resposta
         self.botoes_jogo = []
@@ -39,28 +37,7 @@ class TelaJogo:
         self.botoes_jogo.append(self.botao_c)
         self.botoes_jogo.append(self.botao_d)
 
-        # Cria texto dos botões na tela
-        self.l = 13
-        self.opcoes = self.questao_sorteada['opcoes']
-
-        self.textos = ['A: ' + self.opcoes['A'], 'B: ' + self.opcoes['B'], 'C: ' + self.opcoes['C'], 'D: ' + self.opcoes['D']]
-        self.posicao = [(370, 320), (620, 320), (370, 440), (620, 440)]
-
-        # Cria a pontuação
-        self.pontuacao_do_jogador = self.fonte_jogo.render("Pontuação: " + str(self.pontuacao), True, (255, 255, 255))
-
-        # Cria o Texto/Dificuldade na tela
-        self.nivel_atual = self.fonte_jogo.render(self.questao_sorteada['nivel'], True, (255, 255, 255))
-
-        # Reposta correta
-        self.resposta = self.questao_sorteada['correta']
-
-        # Nível da questão
-        self.nivel = self.questao_sorteada['nivel']
-
-        # Índice da questão atual no banco de questão
-        self.indice = (self.dicionario_classificado[self.nivel].index(self.questao_sorteada))
-
+        self.sorteia_pergunta()
 
     def desenha(self, window):
 
@@ -91,6 +68,36 @@ class TelaJogo:
         # Atualiza a tela
         display.update()
 
+    
+    def sorteia_pergunta(self):
+        # Sorteia nova questão
+        self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
+
+        # Atualiza título da questão
+        self.titulo = self.fonte_jogo.render(self.questao_sorteada['titulo'], True, (0, 0, 0))
+
+        # Cria texto dos botões na tela
+        self.l = 13
+        self.opcoes = self.questao_sorteada['opcoes']
+        self.textos = ['A: ' + self.opcoes['A'], 'B: ' + self.opcoes['B'], 'C: ' + self.opcoes['C'], 'D: ' + self.opcoes['D']]
+        self.posicao = [(370, 320), (620, 320), (370, 440), (620, 440)]
+
+        # Atualiza a pontuação
+        self.pontuacao_do_jogador = self.fonte_jogo.render("Pontuação: " + str(self.pontuacao), True, (255, 255, 255))
+
+        # Atualiza o Texto/Dificuldade na tela
+        self.nivel_atual = self.fonte_jogo.render(self.questao_sorteada['nivel'], True, (255, 255, 255))
+
+        # Atualiza a resposta correta
+        self.resposta = self.questao_sorteada['correta']
+
+        # Atualiza o nível da questão
+        self.nivel = self.questao_sorteada['nivel']
+
+        # Atualiza o índice da questão atual no banco de questão
+        self.indice = (self.dicionario_classificado[self.nivel].index(self.questao_sorteada))
+
+
     def atualiza(self):
         # Checa eventos
         for evento in event.get():
@@ -98,82 +105,24 @@ class TelaJogo:
                 return 'sair'
             elif evento.type == MOUSEBUTTONUP:
                 if evento.button == 1:
-                    if self.botao_a.verifica_clique(evento.pos[0], evento.pos[1]):
-                        if self.resposta == "A":
-                            self.botao_a.desenha(window, True)
-                            self.pontuacao += 1
-                            self.success.play()
+                    for resposta, botao in [('A', self.botao_a), ('B', self.botao_b), ('C', self.botao_c), ('D', self.botao_d)]:
+                        if botao.verifica_clique(evento.pos[0], evento.pos[1]):
+                            if resposta == self.resposta:
+                                botao.desenha(window, True)
+                                self.pontuacao += 1
+                                self.success.play()
 
-                            # Retira questão do dicionário
-                            del (self.dicionario_classificado[self.nivel][self.indice])
+                                # Retira questão do dicionário
+                                del (self.dicionario_classificado[self.nivel][self.indice])
 
-                            # Sorteia nova questão
-                            self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
+                                # Sorteia nova questão
+                                self.sorteia_pergunta()
+
+                            else:
+                                self.fail.play()
+                                return 'game_over'
+
 
                             
-
-                        else:
-                            self.fail.play()
-                            return 'game_over'
-                            
-
-                    elif self.botao_b.verifica_clique(evento.pos[0], evento.pos[1]):
-                        if self.resposta == "B":
-                            self.botao_b.desenha(window, True)
-                            self.pontuacao += 1
-                            self.success.play()
-
-                            # Retira questão do dicionário
-                            del (self.dicionario_classificado[self.nivel][self.indice])
-
-                            # Sorteia nova questão
-                            self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
-                            
-                    
-
-                        else:
-                            self.fail.play()
-                            return 'game_over'
-                            
-
-                    elif self.botao_c.verifica_clique(evento.pos[0], evento.pos[1]):
-                        if self.resposta == "C":
-                            self.botao_c.desenha(window, True)
-                            self.pontuacao += 1
-                            self.success.play()
-
-                            # Retira questão do dicionário
-                            del (self.dicionario_classificado[self.nivel][self.indice])
-
-                            # Sorteia nova questão
-                            self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
-
-                      
-
-                        else:
-                            self.fail.play()
-                            return 'game_over'
-                            
-
-                    elif self.botao_d.verifica_clique(evento.pos[0], evento.pos[1]):
-                        if self.resposta == "D":
-                            self.botao_d.desenha(window, True)
-                            self.pontuacao += 1
-                            self.success.play()
-
-                            # Retira questão do dicionário
-                            del (self.dicionario_classificado[self.nivel][self.indice])
-
-                            # Sorteia nova questão
-                            self.questao_sorteada = sorteia_questao(self.dicionario_classificado, 'Fácil')
-                            window.blit (self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
-
-
-                        else:
-                            self.fail.play()
-                            return 'game_over'
                             
         return self
