@@ -10,8 +10,11 @@ Desenvolvedores: Gabriel Fernando Missaka Mendes e Jonas Bonfá Pelegrina
 
 ## Como se joga
 
---- 
+Quando o jogo for iniciado, uma tela surgirá exibindo uma pergunta e quatro opções de resposta. O objetivo do jogador é selecionar a resposta correta antes do tempo acabar. Caso contrário, o jogador perderá e o jogo será finalizado.
 
+Se o jogador acertar, ele poderá continuar com as perguntas e sua pontuação será aumentada. Conforme o jogador progride no jogo, o nível das perguntas também aumentará, tornando-as mais difíceis e com um tempo de resposta menor.
+
+Para vencer o jogo, o jogador precisa responder corretamente todas as perguntas sem errar nenhuma. É importante lembrar que cada resposta correta é um passo importante em direção à vitória!
 ## Como Baixar o Jogo
 
 1 - Primeiramente acesse o link do jogo no GitHub: https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes.
