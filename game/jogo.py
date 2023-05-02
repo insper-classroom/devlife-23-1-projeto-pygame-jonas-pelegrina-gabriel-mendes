@@ -24,7 +24,6 @@ display.set_icon(simbolo)
 # ----- Código principal
 rodando = True
 while rodando:
-    """ Loop principal do jogo."""
     window.fill(BEGE_FUNDO)
 
     # Tela de início
