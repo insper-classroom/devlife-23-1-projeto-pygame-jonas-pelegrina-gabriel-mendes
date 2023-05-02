@@ -9,12 +9,12 @@ class TelaJogo:
     def __init__(self, perguntas):
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Sons e efeitos sonoros
-        self.success = mixer.Sound('assets/sons/success.mp3')
-        self.fail = mixer.Sound('assets/sons/fail.mp3')
-        self.win = mixer.Sound('assets/sons/win.mp3')
+        self.success = mixer.Sound('game2/assets/sons/success.mp3')
+        self.fail = mixer.Sound('game2/assets/sons/fail.mp3')
+        self.win = mixer.Sound('game2/assets/sons/win.mp3')
         
         # Carrega perguntas
         self.dicionario_classificado = classifica_nivel(perguntas)
@@ -175,7 +175,4 @@ class TelaJogo:
                             self.fail.play()
                             return 'game_over'
                             
-                        
-            
-                 
         return self

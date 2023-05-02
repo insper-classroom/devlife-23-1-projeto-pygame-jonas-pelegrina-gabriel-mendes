@@ -9,11 +9,11 @@ class TelaVenceuJogo:
     def __init__(self):
 
         # Carrega logo de vitória
-        ganhou = image.load('assets/img/ganhou.png')
+        ganhou = image.load('game2/assets/img/ganhou.png')
         self.ganhou = transform.scale(ganhou, (201, 215))
 
         # Carrega fonte
-        self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
+        self.fonte_jogo = font.Font ('game2/assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria mensagem de fim de jogo
         self.mensagem = fonte_jogo.render('Parabéns, você venceu o jogo!', True, (238, 138, 111))
