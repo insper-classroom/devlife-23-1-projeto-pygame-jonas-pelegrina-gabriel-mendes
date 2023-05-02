@@ -1,6 +1,11 @@
+<p align="center">
+<img src="https://raw.githubusercontent.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes/main/docs/content/img/logo.png" width="200">
+</p>
+
+# Quiz Hero
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/F62_0SL3)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10907792&assignment_repo_type=AssignmentRepo)
-# Quiz Hero
+
 
 O Pygame foi um projeto proposto pelos professores e coordenadores da disciplina "Developer Life" do curso de Ciência da Computação do Instituto de Ensino e Pesquisa (Insper). O projeto consiste na criação e desenvolvimento de um site e de um jogo escolhido pelos desenvolvedores escrito totalmente na linguagem Python, o projeto teve um desenvolvimento que durou aproximadamente 2 semanas e o jogo conta com aspectos comumente encontrados nos jogos atualmente, como: efeitos sonoros, jogabilidade fluida e desafiadora.
 
@@ -10,8 +15,11 @@ Desenvolvedores: Gabriel Fernando Missaka Mendes e Jonas Bonfá Pelegrina
 
 ## Como se joga
 
---- 
+Quando o jogo for iniciado, uma tela surgirá exibindo uma pergunta e quatro opções de resposta. O objetivo do jogador é selecionar a resposta correta antes do tempo acabar. Caso contrário, o jogador perderá e o jogo será finalizado.
 
+Se o jogador acertar, ele poderá continuar com as perguntas e sua pontuação será aumentada. Conforme o jogador progride no jogo, o nível das perguntas também aumentará, tornando-as mais difíceis e com um tempo de resposta menor.
+
+Para vencer o jogo, o jogador precisa responder corretamente todas as perguntas sem errar nenhuma. É importante lembrar que cada resposta correta é um passo importante em direção à vitória!
 ## Como Baixar o Jogo
 
 1 - Primeiramente acesse o link do jogo no GitHub: https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes.
@@ -34,5 +42,9 @@ Para instalar esse pacote no Python, digite o seguinte comando no terminal do se
 ```bash
 pip install pygame
 ```
-## SITE DO JOGO
+## Site do jogo
 https://insper-classroom.github.io/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes/
+## Versão 1 do site jogo: Para entrega do dia 24/04/2023:
+Arrumando página principal do jogo - Commit ID: cb596c7508514545361840f861837a0d2f379d0f </br>
+https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes/tree/cb596c7508514545361840f861837a0d2f379d0f
+
