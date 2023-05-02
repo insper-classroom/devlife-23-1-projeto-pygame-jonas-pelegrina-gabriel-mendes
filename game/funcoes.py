@@ -22,11 +22,11 @@ def sorteia_questao (dicionario, nivel):
     return questao
 
 def define_nivel (pontuacao):
-    if pontuacao < 5:
+    if pontuacao < 10:
         nivel = 'Fácil'
-    elif 5 <= pontuacao < 10:
+    elif 10 <= pontuacao < 15:
         nivel = 'Médio'
-    elif pontuacao == 10:
+    elif 15 <= pontuacao < 18:
         nivel = 'Difícil'
     else:
         nivel = 'Ganhou'
@@ -40,6 +40,18 @@ def questao_nivel (nivel, dicionario_classificado):
     elif nivel == 'Difícil':
         questao_sorteada = sorteia_questao (dicionario_classificado, 'Difícil')
     return questao_sorteada
+
+def define_cor_nivel (nivel):
+    if nivel == 'Fácil':
+        cor_nivel = VERDE
+    elif nivel == 'Médio':
+        cor_nivel = AMARELO
+    elif nivel == 'Difícil':
+        cor_nivel = VERMELHO
+    else:
+        cor_nivel = PRETO
+    return cor_nivel
+
 
 def timer_nivel (nivel):
     if nivel == 'Fácil':
