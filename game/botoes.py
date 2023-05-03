@@ -1,5 +1,7 @@
 from pygame import *
+from config import *
 
+# Classe que representa um botão
 class Botao:   
     def __init__(self, x, y, largura, altura, cor):
         """Cria um botão"""
@@ -20,4 +22,4 @@ class Botao:
         if pressed == False:
             draw.rect(window, self.cor, (self.x, self.y, self.largura, self.altura), border_radius = 15)
         else:
-            draw.rect(window, (238, 138, 111), (self.x, self.y, self.largura, self.altura), border_radius = 15)
+            draw.rect(window, LARANJA, (self.x, self.y, self.largura, self.altura), border_radius = 15)

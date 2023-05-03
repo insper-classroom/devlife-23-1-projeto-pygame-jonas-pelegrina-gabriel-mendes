@@ -30,10 +30,10 @@ class TelaJogo:
 
         # Cria botões de resposta
         self.botoes_jogo = []
-        self.botao_a = Botao(350, 300, 220, 100, (211, 135, 244))
-        self.botao_b = Botao(600, 300 ,220, 100, (211, 135, 244))
-        self.botao_c = Botao(350, 420, 220, 100, (211, 135, 244))
-        self.botao_d = Botao(600, 420, 220, 100, (211, 135, 244))
+        self.botao_a = Botao(350, 300, 220, 100, ROXO)
+        self.botao_b = Botao(600, 300 ,220, 100, ROXO)
+        self.botao_c = Botao(350, 420, 220, 100, ROXO)
+        self.botao_d = Botao(600, 420, 220, 100, ROXO)
         self.botoes_jogo.append(self.botao_a)
         self.botoes_jogo.append(self.botao_b)
         self.botoes_jogo.append(self.botao_c)
@@ -44,13 +44,13 @@ class TelaJogo:
     def desenha(self, window):
         """Desenha a tela de jogo"""
         # Desenha fundo na tela
-        window.fill((230, 226, 216))
+        window.fill(BEGE_FUNDO)
 
         # Desenha banner na tela
-        draw.rect(window, (238, 138, 111), (1280/2 - 500, 720/10, 1000, 100))
+        draw.rect(window, LARANJA, (WIDTH/2 - 500, HEIGHT/10, 1000, 100))
 
         # Desenha título da questão na tela
-        window.blit(self.titulo, (1280/2 - 450, 720/10 - self.titulo.get_height()/2 + 50))
+        window.blit(self.titulo, (WIDTH/2 - 450, HEIGHT/10 - self.titulo.get_height()/2 + 50))
 
         # Desenha botões na tela
         for botao in self.botoes_jogo:
@@ -62,10 +62,10 @@ class TelaJogo:
                 desenha_linhas_pygame(linhas, self.fonte_jogo, (0, 0, 0), self.posicao[txt][0], self.posicao[txt][1])
 
         # Desenha a pontuação na tela
-        window.blit(self.pontuacao_do_jogador, (1280/2 - self.pontuacao_do_jogador.get_width()/2 + 400, 720/6 - self.pontuacao_do_jogador.get_height()))
+        window.blit(self.pontuacao_do_jogador, (WIDTH/2 - self.pontuacao_do_jogador.get_width()/2 + 400, HEIGHT/6 - self.pontuacao_do_jogador.get_height()))
         
         # Desenha o Texto/Dificuldade na tela
-        window.blit(self.nivel_atual, (1280/2 - self.nivel_atual.get_width()/2 + 400, 720/5 - self.nivel_atual.get_height()/2))
+        window.blit(self.nivel_atual, (WIDTH/2 - self.nivel_atual.get_width()/2 + 400, HEIGHT/5 - self.nivel_atual.get_height()/2))
 
         # Desenha o timer na tela
         window.blit(self.fonte_jogo.render(self.texto, True, (0, 0, 0)), (32, 48))
@@ -83,7 +83,7 @@ class TelaJogo:
         self.questao_sorteada = questao_nivel(self.nivel, self.dicionario_classificado)
 
         # Atualiza título da questão
-        self.titulo = self.fonte_jogo.render(self.questao_sorteada['titulo'], True, (0, 0, 0))
+        self.titulo = self.fonte_jogo.render(self.questao_sorteada['titulo'], True, PRETO)
 
         # Cria texto dos botões na tela
         self.l = 13
@@ -92,7 +92,7 @@ class TelaJogo:
         self.posicao = [(370, 320), (620, 320), (370, 440), (620, 440)]
 
         # Atualiza a pontuação
-        self.pontuacao_do_jogador = self.fonte_jogo.render("Pontuação: " + str(self.pontuacao), True, (255, 255, 255))
+        self.pontuacao_do_jogador = self.fonte_jogo.render("Pontuação: " + str(self.pontuacao), True, BRANCO)
 
         # Cor do nível de dificuldade atual
         self.cor_nivel = define_cor_nivel(self.nivel)

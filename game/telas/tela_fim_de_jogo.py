@@ -1,66 +1,68 @@
 # ===== Inicialização =====
 # Importa pacotes
 from pygame import *
-from assets import *
 from botoes import *
+from assets import *
+from config import *
 
 # Classe da tela de início
-class TelaVenceuJogo:
+class TelaFimDeJogo:
     def __init__(self):
-        # Carrega logo de vitória
-        ganhou = image.load('assets/img/ganhou.png')
-        self.ganhou = transform.scale(ganhou, (201, 215))
+        # Carrega logo de derrota
+        perdeu = image.load('assets/img/perdeu.png')
+        self.perdeu = transform.scale(perdeu, (201, 215))
 
         # Carrega fonte
         self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
 
         # Cria mensagem de fim de jogo
-        self.mensagem = fonte_jogo.render('Parabéns, você venceu o jogo!', True, (238, 138, 111))
+        self.mensagem = fonte_jogo.render('Você perdeu o jogo!', True, LARANJA)
 
         # Cria dimensões dos botões
         self.botoes = []
         largura = 200
         altura = 60
-        x = 1280/2 - largura/2
+        x = WIDTH/2 - largura/2
         y = 400
 
         # Cria botões
-        self.botao_jogar_novamente = Botao(x, y, largura, altura, (211, 135, 244))
-        self.botao_menu_principal = Botao(x, y + 80, largura, altura, (211, 135, 244))
-        self.botao_sair = Botao(1280/2 - 120/2, y + 160, 120, altura, (211, 135, 244))
+        self.botao_jogar_novamente = Botao(x, y, largura, altura, LARANJA)
+        self.botao_menu_principal = Botao(x, y + 80, largura, altura, LARANJA)
+        self.botao_sair = Botao(WIDTH/2 - 120/2, y + 160, 120, altura, LARANJA)
         self.botoes.append(self.botao_jogar_novamente)
         self.botoes.append(self.botao_menu_principal)
         self.botoes.append(self.botao_sair)
 
         # Cria textos nos botões
-        self.jogar_novamente = self.fonte_jogo.render('Jogar novamente', True, (0, 0, 0))
-        self.menu_principal = self.fonte_jogo.render('Menu principal', True, (0, 0, 0))
-        self.sair = self.fonte_jogo.render('Sair', True, (0, 0, 0))
+        self.jogar_novamente = self.fonte_jogo.render('Jogar novamente', True, PRETO)
+        self.menu_principal = self.fonte_jogo.render('Menu principal', True, PRETO)
+        self.sair = self.fonte_jogo.render('Sair', True, PRETO)
 
 
     def desenha(self, window):
-        """ Desenha a tela de vitória"""
+        """Desenha a tela de fim de jogo"""
+
         # Desenha fundo na tela
-        window.fill((230, 226, 216))
+        window.fill(BEGE_FUNDO)
 
         # Desenha as mensagens na tela
-        window.blit(self.mensagem, (1280/2 - self.mensagem.get_width()/2, 720/2 - self.mensagem.get_height()/2 - 20))
-        window.blit(self.ganhou, (1280/2 - self.ganhou.get_width()/2, 720/2 - self.ganhou.get_height()/2 - 180))
+        window.blit(self.mensagem, (WIDTH/2 - self.mensagem.get_width()/2, HEIGHT/2 - self.mensagem.get_height()/2 - 20))
+        window.blit(self.perdeu, (WIDTH/2 - self.perdeu.get_width()/2, HEIGHT/2 - self.perdeu.get_height()/2 - 180))
 
         # Desenha botões
         for botao in self.botoes:
             botao.desenha(window, False)
-
+            
         # Desenha textos do botões
-        window.blit(self.jogar_novamente, (1280/2 - self.jogar_novamente.get_width()/2, 720/2 - self.jogar_novamente.get_height()/2 + 70))
-        window.blit(self.menu_principal, (1280/2 - self.menu_principal.get_width()/2, 720/2 - self.menu_principal.get_height()/2 + 150))
-        window.blit(self.sair, (1280/2 - self.sair.get_width()/2, 720/2 - self.sair.get_height()/2 + 230))
+        window.blit(self.jogar_novamente, (WIDTH/2 - self.jogar_novamente.get_width()/2, HEIGHT/2 - self.jogar_novamente.get_height()/2 + 70))
+        window.blit(self.menu_principal, (WIDTH/2 - self.menu_principal.get_width()/2, HEIGHT/2 - self.menu_principal.get_height()/2 + 150))
+        window.blit(self.sair, (WIDTH/2 - self.sair.get_width()/2, HEIGHT/2 - self.sair.get_height()/2 + 230))
 
         # Atualiza a tela
         display.update()
 
     def atualiza(self):
-        """ Atualiza a tela de vitória"""
+        """Atualiza a tela de fim de jogo"""
         # Check eventos
         for evento in event.get():
             if evento.type == QUIT:

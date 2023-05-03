@@ -57,7 +57,6 @@ def define_cor_nivel (nivel):
         cor_nivel = PRETO
     return cor_nivel
 
-
 def timer_nivel (nivel):
     """Define o tempo de resposta de acordo com o nível escolhido"""
     if nivel == 'Fácil':
@@ -68,12 +67,10 @@ def timer_nivel (nivel):
         timer = 10
     return timer
 
-
 def quebra_alternativa(txt, largura):
     """Quebra uma string em várias linhas, para que caibam em um espaço"""
     lista = wrap(txt, largura,break_long_words=True)
     return '\n'.join(lista)
-
 
 def desenha_linhas_pygame(txt, fonte, cor, x, y):
     """Desenha um texto em várias linhas, para que caibam em um espaço"""
