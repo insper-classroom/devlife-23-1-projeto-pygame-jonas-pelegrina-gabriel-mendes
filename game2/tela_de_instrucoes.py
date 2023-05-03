@@ -6,7 +6,6 @@ from botoes import *
 # Classe da tela de instruções
 class TelaDeInstrucoes:
     def __init__(self):
-        
         # Carrega fonte
         self.fonte_jogo = font.Font ('assets/fonts/SpaceMono-Regular.ttf', 20)
 
@@ -41,8 +40,7 @@ class TelaDeInstrucoes:
         self.voltar = self.fonte_jogo.render('Voltar', True, (0, 0, 0))
 
 
-    def desenha(self, window):
-            
+    def desenha(self, window):         
         # Desenha fundo
         window.fill((230, 226, 216))
 

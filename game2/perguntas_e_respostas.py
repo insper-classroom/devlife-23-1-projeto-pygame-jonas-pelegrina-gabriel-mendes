@@ -1,4 +1,4 @@
-# Perguntas geradas utilizando ChatGPT
+# Banco de dados de perguntas e respostas (algumas das questões abaixo foram formuladas pelo ChatGPT)
 
 perguntas = [
           # Fáceis

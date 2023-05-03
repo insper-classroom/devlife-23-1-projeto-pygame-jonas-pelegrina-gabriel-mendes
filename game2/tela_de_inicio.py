@@ -7,7 +7,6 @@ from botoes import *
 # Classe da tela de início
 class TelaDeInicio:
     def __init__(self):
-        
         # Carrega logo
         simbolo = image.load('assets/icon/logo.png')
         self.logo = transform.scale(simbolo, (201, 215))
@@ -36,7 +35,6 @@ class TelaDeInicio:
         self.sair = self.fonte_jogo.render('Sair', True, (0, 0, 0))
 
     def desenha(self, window):
-        
         # Desenha fundo
         window.fill((230,226,216))
 

@@ -7,7 +7,6 @@ from botoes import *
 # Classe da tela de início
 class TelaVenceuJogo:
     def __init__(self):
-
         # Carrega logo de vitória
         ganhou = image.load('assets/img/ganhou.png')
         self.ganhou = transform.scale(ganhou, (201, 215))
@@ -43,7 +42,6 @@ class TelaVenceuJogo:
 
 
     def desenha(self, window):
-
         # Desenha fundo na tela
         window.fill((230, 226, 216))
 
@@ -55,7 +53,6 @@ class TelaVenceuJogo:
         # Desenha botões
         for botao in self.botoes:
             botao.desenha(window, False)
-            
 
         # Desenha textos do botões
         window.blit(self.jogar_novamente, (1280/2 - self.jogar_novamente.get_width()/2, 720/2 - self.jogar_novamente.get_height()/2 + 70))
