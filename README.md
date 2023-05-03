@@ -48,5 +48,5 @@ https://insper-classroom.github.io/devlife-23-1-projeto-pygame-jonas-pelegrina-g
 Arrumando página principal do jogo - Commit ID: cb596c7508514545361840f861837a0d2f379d0f </br>
 https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes/tree/cb596c7508514545361840f861837a0d2f379d0f
 
-# Outras Informações
+# Uso de IA
 Utilizamos ChatGPT e GitHub Copilot para nos auxiliar em algumas tarefas no desenvolvimento do nosso jogo.
