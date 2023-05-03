@@ -16,9 +16,6 @@ class TelaVenceuJogo:
 
         # Cria mensagem de fim de jogo
         self.mensagem = fonte_jogo.render('Parabéns, você venceu o jogo!', True, (238, 138, 111))
-        
-        # Cria pontuação final
-        self.pontuacao_final = fonte_jogo.render('Pontuação final: ' + str(0), True, (238, 138, 111))
 
         # Cria dimensões dos botões
         self.botoes = []
@@ -46,9 +43,8 @@ class TelaVenceuJogo:
         window.fill((230, 226, 216))
 
         # Desenha as mensagens na tela
-        window.blit(self.mensagem, (1280/2 - self.mensagem.get_width()/2, 720/2 - self.mensagem.get_height()/2 - 40))
+        window.blit(self.mensagem, (1280/2 - self.mensagem.get_width()/2, 720/2 - self.mensagem.get_height()/2 - 20))
         window.blit(self.ganhou, (1280/2 - self.ganhou.get_width()/2, 720/2 - self.ganhou.get_height()/2 - 180))
-        window.blit(self.pontuacao_final, (1280/2 - self.pontuacao_final.get_width()/2, 720/2 - self.pontuacao_final.get_height()/2 + 5))
 
         # Desenha botões
         for botao in self.botoes:
