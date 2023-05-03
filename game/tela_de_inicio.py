@@ -35,6 +35,7 @@ class TelaDeInicio:
         self.sair = self.fonte_jogo.render('Sair', True, (0, 0, 0))
 
     def desenha(self, window):
+        """Desenha a tela de início"""
         # Desenha fundo
         window.fill((230,226,216))
 
@@ -54,7 +55,8 @@ class TelaDeInicio:
         display.update()
 
     def atualiza(self):
-        # Checa eventos
+        """Faz check de eventos"""
+        # Check de eventos.
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'

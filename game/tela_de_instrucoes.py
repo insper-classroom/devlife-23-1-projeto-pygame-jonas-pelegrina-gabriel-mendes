@@ -40,7 +40,8 @@ class TelaDeInstrucoes:
         self.voltar = self.fonte_jogo.render('Voltar', True, (0, 0, 0))
 
 
-    def desenha(self, window):         
+    def desenha(self, window):     
+        """Desenha a tela de instruções"""    
         # Desenha fundo
         window.fill((230, 226, 216))
 
@@ -72,7 +73,8 @@ class TelaDeInstrucoes:
         display.update()
 
     def atualiza(self):
-        # Checa eventos
+        """Atualiza a tela de instruções"""
+        # Check eventos
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'

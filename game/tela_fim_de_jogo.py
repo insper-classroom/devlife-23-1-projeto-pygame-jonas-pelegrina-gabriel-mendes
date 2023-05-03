@@ -43,6 +43,7 @@ class TelaFimDeJogo:
 
 
     def desenha(self, window):
+        """Desenha a tela de fim de jogo"""
 
         # Desenha fundo na tela
         window.fill((230, 226, 216))
@@ -65,7 +66,8 @@ class TelaFimDeJogo:
         display.update()
 
     def atualiza(self):
-        # Checa eventos
+        """Atualiza a tela de fim de jogo"""
+        # Check eventos
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'

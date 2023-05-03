@@ -42,6 +42,7 @@ class TelaVenceuJogo:
 
 
     def desenha(self, window):
+        """ Desenha a tela de vitória"""
         # Desenha fundo na tela
         window.fill((230, 226, 216))
 
@@ -63,7 +64,8 @@ class TelaVenceuJogo:
         display.update()
 
     def atualiza(self):
-        # Checa eventos
+        """ Atualiza a tela de vitória"""
+        # Check eventos
         for evento in event.get():
             if evento.type == QUIT:
                 return 'sair'
