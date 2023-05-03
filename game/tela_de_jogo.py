@@ -153,5 +153,5 @@ class TelaJogo:
                             else:
                                 mixer.music.pause()
                                 self.fail.play()
-                                return 'game_over'    
+                                return 'game_over'  
         return self

@@ -3,6 +3,7 @@
 from pygame import *
 from assets import *
 from botoes import *
+from tela_de_jogo import *
 
 # Classe da tela de início
 class TelaFimDeJogo:

@@ -1,6 +1,11 @@
-# Perguntas geradas utilizando ChatGPT
+# Banco de dados de perguntas e respostas (algumas das questões abaixo foram formuladas pelo ChatGPT)
+
 perguntas = [
           # Fáceis
+         {'titulo': 'Qual é a capital do Brasil?',
+          'nivel': 'Fácil',
+          'opcoes': {'A': 'Brasília', 'B': 'São Paulo', 'C': 'Rio de Janeiro', 'D': 'Belo Horizonte'},
+          'correta': 'A'},
          {'titulo': 'Qual o resultado da operação 5 + 5?',
           'nivel': 'Fácil',
           'opcoes': {'A': '10', 'B': '15', 'C': '20', 'D': '25'},
