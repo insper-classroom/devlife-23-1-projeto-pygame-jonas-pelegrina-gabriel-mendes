@@ -47,3 +47,6 @@ https://insper-classroom.github.io/devlife-23-1-projeto-pygame-jonas-pelegrina-g
 ## Versão 1 do site jogo: Para entrega do dia 24/04/2023:
 Arrumando página principal do jogo - Commit ID: cb596c7508514545361840f861837a0d2f379d0f </br>
 https://github.com/insper-classroom/devlife-23-1-projeto-pygame-jonas-pelegrina-gabriel-mendes/tree/cb596c7508514545361840f861837a0d2f379d0f
+
+# USO DE IA
+Utilizamos CHATGP e Copilot para nos auxiliar em algumas tarefas no desenvolvimento do nosso jogo.

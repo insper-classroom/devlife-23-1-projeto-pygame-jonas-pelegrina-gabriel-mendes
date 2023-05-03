@@ -24,6 +24,7 @@ class Jogo:
 
 
     def roda(self):
+        """Roda o jogo"""
         # Inicia tela de início
         tela_atual = TelaDeInicio()
 

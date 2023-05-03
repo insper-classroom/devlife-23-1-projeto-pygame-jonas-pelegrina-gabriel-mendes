@@ -42,6 +42,7 @@ class TelaJogo:
         self.sorteia_pergunta()
 
     def desenha(self, window):
+        """Desenha a tela de jogo"""
         # Desenha fundo na tela
         window.fill((230, 226, 216))
 
@@ -74,6 +75,7 @@ class TelaJogo:
 
     
     def sorteia_pergunta(self):
+        """Sorteia uma nova pergunta"""
         # Nível de dificuldade atual
         self.nivel = define_nivel(self.pontuacao)
 
@@ -105,6 +107,7 @@ class TelaJogo:
         self.indice = (self.dicionario_classificado[self.nivel].index(self.questao_sorteada))
 
     def atualiza(self):
+        """Atualiza a tela de jogo"""
         # Checa eventos
         for evento in event.get():
             if evento.type == QUIT:
